@@ -1,0 +1,272 @@
+[
+  {
+    "badge_index": 0,
+    "provider": "badge",
+    "arch_name": "查看全部的徽章",
+    "information": "check_badge_info.svg",
+    "content": "check_badge_info",
+    "value": 100,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 1,
+    "provider": "badge",
+    "arch_name": "完成全部的課程",
+    "information": "finish_all_step.svg",
+    "content": "finish_all_step",
+    "value": 50,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 2,
+    "provider": "badge",
+    "arch_name": "第一次出錯",
+    "information": "first_fall_answer.svg",
+    "content": "first_fall_answer",
+    "value": 10,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 3,
+    "provider": "badge",
+    "arch_name": "第一次成功解答",
+    "information": "first_good_answer.svg",
+    "content": "first_good_answer",
+    "value": 10,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 4,
+    "provider": "badge",
+    "arch_name": "第一次登入",
+    "information": "first_login.svg",
+    "content": "first_login",
+    "value": 1,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 5,
+    "provider": "badge",
+    "arch_name": "第一次登出",
+    "information": "first_logout.svg",
+    "content": "first_logout",
+    "value": 1,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 6,
+    "provider": "badge",
+    "arch_name": "第一次複習課程",
+    "information": "first_roll_back_step.svg",
+    "content": "first_roll_back_step",
+    "value": 1,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 7,
+    "provider": "badge",
+    "arch_name": "第一次查看徽章內容",
+    "information": "first_see_badge.svg",
+    "content": "first_see_badge",
+    "value": 1,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 8,
+    "provider": "badge",
+    "arch_name": "填寫問卷",
+    "information": "thumb_up.svg",
+    "content": "thumb_up",
+    "value": 2,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 9,
+    "provider": "badge",
+    "arch_name": "第一次查看活動紀錄",
+    "information": "first_see_loglist.svg",
+    "content": "first_see_loglist",
+    "value": 1,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 10,
+    "provider": "badge",
+    "arch_name": "第一次贏得排行榜第一名",
+    "information": "first_win_the_leaderboard.svg",
+    "content": "first_win_the_leaderboard",
+    "value": 100,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 11,
+    "provider": "badge",
+    "arch_name": "第一次跳躍課程",
+    "information": "jump_step.svg",
+    "content": "jump_step",
+    "value": 1,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 12,
+    "provider": "badge",
+    "arch_name": "第一次觀看排行榜",
+    "information": "leaderboard.svg",
+    "content": "leaderboard",
+    "value": 1,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 13,
+    "provider": "badge",
+    "arch_name": "通過第一關",
+    "information": "step_1.svg",
+    "content": "step_1",
+    "value": 10,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 14,
+    "provider": "badge",
+    "arch_name": "通過第二關",
+    "information": "step_2.svg",
+    "content": "step_2",
+    "value": 20,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 15,
+    "provider": "badge",
+    "arch_name": "通過第三關",
+    "information": "step_3.svg",
+    "content": "step_3",
+    "value": 40,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 16,
+    "provider": "badge",
+    "arch_name": "通過第四關",
+    "information": "step_4.svg",
+    "content": "step_4",
+    "value": 100,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 17,
+    "provider": "badge",
+    "arch_name": "通過第五關",
+    "information": "step_5.svg",
+    "content": "step_5",
+    "value": 200,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 18,
+    "provider": "badge",
+    "arch_name": "通過第六關",
+    "information": "step_6.svg",
+    "content": "step_6",
+    "value": 300,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 19,
+    "provider": "badge",
+    "arch_name": "通過第七關",
+    "information": "step_7.svg",
+    "content": "step_7",
+    "value": 400,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 20,
+    "provider": "badge",
+    "arch_name": "通過第八關",
+    "information": "step_8.svg",
+    "content": "step_8",
+    "value": 500,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 21,
+    "provider": "badge",
+    "arch_name": "通過第九關",
+    "information": "step_9.svg",
+    "content": "step_9",
+    "value": 1000,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 22,
+    "provider": "badge",
+    "arch_name": "進行遊戲測試",
+    "information": "test_game.svg",
+    "content": "test_game",
+    "value": 10,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 23,
+    "provider": "badge",
+    "arch_name": "完成介面教學",
+    "information": "tutorial_finish.svg",
+    "content": "tutorial_finish",
+    "value": 10,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 24,
+    "provider": "badge",
+    "arch_name": "觀看關於頁面",
+    "information": "view_about.svg",
+    "content": "view_about",
+    "value": 1,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 25,
+    "provider": "badge",
+    "arch_name": "觀看別人資訊",
+    "information": "view_other_profile.svg",
+    "content": "view_other_profile",
+    "value": 100,
+    "frequency": 1,
+    "finish": false
+  },
+  {
+    "badge_index": 26,
+    "provider": "badge",
+    "arch_name": "觀看個人資訊",
+    "information": "view_profile.svg",
+    "content": "view_profile",
+    "value": 30,
+    "frequency": 1,
+    "finish": false
+  }
+]

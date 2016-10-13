@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+
+
+555555555555555555      000000000          000000000
+5::::::::::::::::5    00:::::::::00      00:::::::::00
+5::::::::::::::::5  00:::::::::::::00  00:::::::::::::00
+5:::::555555555555 0:::::::000:::::::00:::::::000:::::::0
+5:::::5            0::::::0   0::::::00::::::0   0::::::0
+5:::::5            0:::::0     0:::::00:::::0     0:::::0
+5:::::5555555555   0:::::0     0:::::00:::::0     0:::::0
+5:::::::::::::::5  0:::::0 000 0:::::00:::::0 000 0:::::0
+555555555555:::::5 0:::::0 000 0:::::00:::::0 000 0:::::0
+            5:::::50:::::0     0:::::00:::::0     0:::::0
+            5:::::50:::::0     0:::::00:::::0     0:::::0
+5555555     5:::::50::::::0   0::::::00::::::0   0::::::0
+5::::::55555::::::50:::::::000:::::::00:::::::000:::::::0
+ 55:::::::::::::55  00:::::::::::::00  00:::::::::::::00
+   55:::::::::55      00:::::::::00      00:::::::::00
+     555555555          000000000          000000000
+
+
+
+  This is the default "500: Server Error" page.
+  User agents that don't "Accept" HTML will see a JSON version instead.
+  You can customize the control logic for your needs in `config/500.js`
+
+  Sails considers a request in a "500: Server Error" state when
+  your app throws a catchable error (not inside of an asynchronous callback).
+
+  You can also trigger this response from one of your controllers or policies with:
+  `return res.serverError( e );`
+  (where `e` is an optional message, error, or array of errors to include in the response)
+
+-->
+<html>
+
+<head>
+    <title>Server Error</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: #f2eeed;
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        h1 {
+            color: #848484;
+            letter-spacing: .08em;
+            font-size: 20px;
+        }
+
+        h2 {
+            color: #333232;
+            font-weight: normal;
+            font-size: 27px;
+        }
+
+        a {
+            color: #78c4dc;
+        }
+
+        .title {
+            background: white;
+            margin: 0 auto;
+            width: 500px;
+            padding: 40px;
+            box-shadow: 0px 2px 3px #b9b6b5;
+        }
+
+        .cloud-flip {
+            font-size: 60px;
+            margin: 0 0 40px -30px;
+            color: #f36348;
+        }
+    </style>
+</head>
+
+<body>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <div class='title'>
+        <h1>Internal Server Error</h1>
+        <h2>Something isn't right here.</h2>
+        <h2>
+            <% if (typeof error!== 'undefined') { %>
+                <%= error %>
+                    <% } else { %>
+                        The page you were trying to reach doesn't exist.
+                        <% } %>
+        </h2>
+        <div class='cloud-flip'>
+            <pre id="owo"></pre>
+        </div>
+        <p>
+            <a href="<%= project_name %>">Go back to the dashboard</a>
+        </p>
+    </div>
+    <script>
+        var arrOWO = ['(´･ω･`)', '( ´･ω･)', '(　´･ω)', '( 　´･)', '(　　´)', '(　　 )', '(`　　)', '(･`　 )', '(ω･`　)', '(･ω･` )'];
+        var owo = document.getElementById('owo');
+        var i = 0;
+
+        setInterval(function() {
+            owo.innerHTML = arrOWO[i];
+            i++;
+
+            if (i > arrOWO.length - 1) {
+                i = 0;
+            }
+        }, 100);
+    </script>
+</body>
+
+</html>

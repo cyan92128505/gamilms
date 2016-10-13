@@ -1,0 +1,425 @@
+var gamilms_logo = function(gradientCanvas){
+    // config.js
+    console.log(gradientCanvas);
+    var config = {
+        size: 3,
+        speed: 0.5,
+        gridWidth: 216,
+        gridHeight: 106,
+        hyperlapse: true,
+        canvasPadding: 5,
+        cyclesPerFrame: 50,
+        message: "GAMILMS",
+        startColor: "#92A8D1",
+        endColor: "#F7CAC9",
+        colorIncrease: 0.00025,
+    };
+
+    // gradient.js
+
+    var WIDTH = 1000;
+
+    var percent = 0;
+    var gradientContext = gradientCanvas.getContext("2d");
+    var gradient = {};
+
+    gradientCanvas.height = 1;
+    gradientCanvas.width = WIDTH;
+
+    function onUpdateGradient() {
+
+        var gradient = gradientContext.createLinearGradient(0, 0, WIDTH, 0);
+
+        gradient.addColorStop(0, config.startColor);
+        gradient.addColorStop(1, config.endColor);
+
+        gradientContext.fillStyle = gradient;
+        gradientContext.fillRect(0, 0, WIDTH, 1);
+    }
+
+    function pad(value) {
+        return ("000000" + value).slice(-6);
+    }
+
+    function rgbToCSS(r, g, b) {
+        return "#" + pad(((r << 16) | (g << 8) | b).toString(16));
+    }
+
+    function calculate(value) {
+        var x = (value * (WIDTH - 1)) | 0;
+        var data = gradientContext.getImageData(x, 0, 1, 1).data;
+
+        return rgbToCSS(data[0], data[1], data[2]);
+    }
+
+    gradient.get = function() {
+        return calculate(percent);
+    };
+
+    gradient.getColorFrom = function(base) {
+        return calculate(Math.min(base + config.colorIncrease, 1));
+    };
+
+    gradient.getPercentFrom = function(base) {
+        return Math.min(base + config.colorIncrease, 1);
+    };
+
+    onUpdateGradient();
+
+    // tile.js
+
+    function randInt(min, max) {
+        return Math.round(min + Math.random() * max - min);
+    }
+
+    function shuffle(arr) {
+        var results = [],
+            rnd;
+        if (arr == null) {
+            return results;
+        }
+
+        var i = -1,
+            len = arr.length;
+        while (++i < len) {
+            if (!i) {
+                results[0] = arr[0];
+            } else {
+                rnd = randInt(0, i);
+                results[i] = results[rnd];
+                results[rnd] = arr[i];
+            }
+        }
+
+        return results;
+    }
+
+    var tile = {};
+
+    tile.generate = function(x, y, context) {
+
+        var self = {};
+        var t = 0;
+        var neighbors;
+        var corners;
+        var available = true;
+        var color = config.startColor;
+        var colorPercent = 0;
+
+        self.x = x;
+        self.y = y;
+
+        self.setNeighbors = function(array) {
+            neighbors = shuffle(array);
+        };
+
+        self.setCorners = function(array) {
+            corners = array;
+        };
+
+        self.render = function() {
+            available = false;
+
+            if (config.hyperlapse) t = 1;
+            else t = Math.min(1, t + config.speed);
+
+            var size = Math.ceil(config.size * t);
+            var half = Math.ceil(config.size * t * 0.5);
+
+            context.beginPath();
+            context.rect(-half, -half, size, size);
+            context.fillStyle = color;
+            context.strokeStyle = color;
+            context.fill();
+            context.stroke();
+        };
+
+        self.setColor = function(value) {
+            color = value;
+        };
+
+        self.setColorFactor = function(value) {
+            colorPercent = value;
+        };
+
+        self.getColorFactor = function() {
+            return colorPercent;
+        };
+
+        self.isComplete = function() {
+            return t >= 1;
+        };
+
+        self.getAvailableNeighbor = function() {
+            var current;
+
+            for (var i = neighbors.length - 1; i >= 0; i--) {
+                current = neighbors[i];
+
+                if (current.hasSaveSurrounding(self) && current.isAvailable()) {
+                    return current;
+                }
+            }
+
+            return null;
+        };
+
+        self.hasSaveSurrounding = function(entrence) {
+
+            var i, current;
+
+            for (i = neighbors.length - 1; i >= 0; i--) {
+                current = neighbors[i];
+
+                if (current === entrence) continue;
+
+                if (!current.isAvailable()) return false;
+            }
+
+            for (i = corners.length - 1; i >= 0; i--) {
+                current = corners[i];
+
+                if (current.isAdjacent(entrence)) continue;
+
+                if (!current.isAvailable()) return false;
+            }
+
+            return true;
+        };
+
+        self.isAdjacent = function(tile) {
+
+            for (var i = neighbors.length - 1; i >= 0; i--) {
+                if (neighbors[i] === tile) return true;
+            }
+
+            return false;
+
+        };
+
+        self.updateAvailability = function(value) {
+            available = available && value;
+        };
+
+        self.isAvailable = function() {
+            return available;
+        };
+
+        return self;
+    };
+
+    // grid.js
+
+    var matrix;
+    var activeTiles;
+    var context;
+    var gridWidth = 0;
+    var gridHeight = 0;
+    var checkPool = [];
+    var grid = {};
+
+    grid.setContext = function(value) {
+        context = value;
+    };
+
+    grid.generate = function(width, height) {
+
+        gridWidth = width;
+        gridHeight = height;
+
+        matrix = [];
+        activeTiles = [];
+        checkPool = [];
+
+        var x, y;
+
+        for (y = 0; y < height; y++) {
+            matrix.push([]);
+
+            for (x = 0; x < width; x++) {
+                matrix[y].push(tile.generate(x, y, context));
+            }
+        }
+
+        for (y = 0; y < height; y++) {
+            for (x = 0; x < width; x++) {
+
+                var neighbors = [];
+                var corners = [];
+
+                if (y > 0) neighbors.push(matrix[y - 1][x]);
+                if (y < height - 1) neighbors.push(matrix[y + 1][x]);
+                if (x > 0) neighbors.push(matrix[y][x - 1]);
+                if (x < gridWidth - 1) neighbors.push(matrix[y][x + 1]);
+
+                if (x < width - 1 && y > 0) corners.push(matrix[y - 1][x + 1]);
+                if (x < width - 1 && y < height - 1) corners.push(matrix[y + 1][x + 1]);
+                if (x > 0 && y < height - 1) corners.push(matrix[y + 1][x - 1]);
+                if (x > 0 && y > 0) corners.push(matrix[y - 1][x - 1]);
+
+                matrix[y][x].setNeighbors(neighbors);
+                matrix[y][x].setCorners(corners);
+            }
+        }
+    };
+
+    grid.mask = function(transform) {
+        transform(matrix);
+    };
+
+    grid.start = function(x, y) {
+
+        x = x || 0;
+        y = y || 0;
+
+        var next = matrix[y][x];
+
+        next.updateAvailability(false);
+
+        activeTiles.push(next);
+    };
+
+    grid.render = function() {
+
+        var x, y, current;
+
+        for (var k = 0; k < config.cyclesPerFrame; k++) {
+
+            for (var i = 0, length = activeTiles.length; i < length; i++) {
+                current = activeTiles[i];
+
+                x = current.x * config.size + config.size / 2 + config.canvasPadding;
+                y = current.y * config.size + config.size / 2 + config.canvasPadding;
+
+                context.translate(x, y); // save
+
+                current.render();
+
+                if (current.isComplete()) {
+                    checkPool.unshift(activeTiles.splice(i, 1)[0]);
+                    i--;
+                    length--;
+
+                    next();
+                }
+
+                context.translate(-x, -y); // restore
+            }
+        }
+    };
+
+    function next() {
+
+        var probe;
+        var tile;
+
+        while (checkPool.length > 0) {
+
+            probe = checkPool[0];
+            tile = probe.getAvailableNeighbor();
+
+            if (tile && !tile.isComplete()) {
+
+                var color = gradient.getColorFrom(probe.getColorFactor());
+                var percent = gradient.getPercentFrom(probe.getColorFactor());
+
+                tile.setColorFactor(percent);
+                tile.setColor(color);
+                tile.updateAvailability(false);
+
+                activeTiles.push(tile);
+
+                return;
+
+            } else {
+
+                checkPool.shift();
+
+            }
+        }
+    }
+
+    // image.js
+
+    var imageCanvas = document.createElement("canvas");
+    var imageContext = imageCanvas.getContext("2d");
+
+    var image = function(string, width, height) {
+
+        imageCanvas.width = width;
+        imageCanvas.height = height;
+
+        imageContext.clearRect(0, 0, width, height);
+
+        imageContext.fillStyle = "black";
+        imageContext.font = "40px sans-serif";
+        imageContext.textAlign = "center";
+        imageContext.textBaseline = "middle";
+        imageContext.fillText(string, width / 2, height / 2);
+
+        return imageContext.getImageData(0, 0, width, height);
+    };
+
+    // mask.js
+
+    var mask = function(matrix) {
+
+        var imageData = image(
+            config.message,
+            config.gridWidth,
+            config.gridHeight
+        );
+
+        var data = imageData.data;
+
+        var colLength = matrix.length;
+        var rowLength = matrix[0].length;
+
+        for (var y = 0; y < colLength; y++) {
+            for (var x = 0; x < rowLength; x++) {
+                matrix[y][x].updateAvailability(data[(y * rowLength + x) * 4 + 3] === 0);
+            }
+        }
+
+    };
+
+    // main.js
+
+    var canvas = document.querySelector("#canvas");
+    var context = canvas.getContext("2d");
+
+    function init() {
+
+        setup();
+        render();
+
+        config.on("render", setup);
+    }
+
+    function setup() {
+        setSize();
+        clear();
+
+        grid.setContext(context);
+        grid.generate(config.gridWidth, config.gridHeight);
+        grid.mask(mask);
+        grid.start();
+    }
+
+    function render() {
+        requestAnimationFrame(render);
+
+        grid.render();
+    }
+
+    function clear() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function setSize() {
+        canvas.width = config.gridWidth * config.size + config.canvasPadding * 2;
+        canvas.height = config.gridHeight * config.size + config.canvasPadding * 2;
+    }
+    init();
+
+}

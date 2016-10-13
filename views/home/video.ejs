@@ -1,0 +1,66 @@
+<div class="col-sm-9 profile_badge_animation">
+    <h1><b ng-bind="video_title"></b></h1>
+    <h2 ng-bind="video_information"></h2>
+</div>
+<div class="col-sm-12 profile_badge_animation">
+    <div class="course_summary clearfix">
+        <div class="col-sm-4 col-xs-6 csm csm_left">
+            <i class="glyphicon glyphicon-tasks col-sm-3 col-xs-3"></i>
+            <div class="col-sm-9 col-xs-9">
+                Level
+                <div class="csm_value">
+                    Beginner </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-xs-6 csm csm_left">
+            <i class="glyphicon glyphicon-user col-sm-3 col-xs-3"></i>
+            <div class="col-sm-9 col-xs-9">
+                # Learners
+                <div class="csm_value" ng-bind="web_state_list.length"></div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-xs-6 csm">
+            <i class="glyphicon glyphicon-time col-sm-3 col-xs-3"></i>
+            <div class="col-sm-9 col-xs-9">
+                Duration
+                <div class="csm_value" ng-bind="video_time"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr/>
+<youtube-video player-width="'100%'" video-id="SubjectVideo" allowfullscreen></youtube-video>
+<!-- <div class="profile_badge_animation">
+    <h1 ng-bind="video_title"></h1>
+    <div class="row">
+        <div class="col-md-8 well">
+            <h3>上課學員：</h3>
+            <div ng-repeat="user in web_state_list">
+                <img class="video_state_list_img" ng-src="{{user.img}}"></img>
+            </div>
+        </div>
+        <div class="col-md-4">
+
+            <button class="btn btn-default" ng-click="add_one()">add_one</button>
+            <button class="btn btn-default" ng-click="open_modal()">open_modal</button>
+        </div>
+        <div class="bounce-wrap">
+            <div class="bounce">
+                <div class="-shadow"></div>
+                <div class="-box-wrap js-box-wrap">
+                    <div class="-box">
+                        <div class="front wall"></div>
+                        <div class="back wall"></div>
+                        <div class="right wall"></div>
+                        <div class="left wall"></div>
+
+                        <div class="front-right wall"></div>
+                        <div class="front-left wall"></div>
+                        <div class="back-right wall"></div>
+                        <div class="back-left wall"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

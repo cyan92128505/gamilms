@@ -1,0 +1,153 @@
+[
+  {
+    "type": "tag",
+    "name": "ion-side-menus",
+    "attribs": {
+      "enable-menu-with-back-views": "false"
+    },
+    "children": [
+      {
+        "type": "tag",
+        "name": "ion-side-menu-content",
+        "children": [
+          {
+            "type": "tag",
+            "name": "ion-nav-bar",
+            "attribs": {
+              "class": "bar-stable"
+            },
+            "children": [
+              {
+                "type": "tag",
+                "name": "ion-nav-back-button"
+              },
+              {
+                "type": "tag",
+                "name": "ion-nav-buttons",
+                "attribs": {
+                  "side": "left"
+                },
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "button",
+                    "attribs": {
+                      "class": "button button-icon button-clear ion-navicon",
+                      "menu-toggle": "left"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "name": "ion-nav-view",
+            "attribs": {
+              "name": "menuContent"
+            }
+          }
+        ]
+      },
+      {
+        "type": "tag",
+        "name": "ion-side-menu",
+        "attribs": {
+          "side": "left"
+        },
+        "children": [
+          {
+            "type": "tag",
+            "name": "ion-header-bar",
+            "attribs": {
+              "class": "bar-stable"
+            },
+            "children": [
+              {
+                "type": "tag",
+                "name": "h1",
+                "attribs": {
+                  "class": "title"
+                },
+                "children": [
+                  {
+                    "data": "Left",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "name": "ion-content",
+            "children": [
+              {
+                "type": "tag",
+                "name": "ion-list",
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "ion-item",
+                    "attribs": {
+                      "menu-close": "menu-close",
+                      "ng-click": "login()"
+                    },
+                    "children": [
+                      {
+                        "data": "\n          Login\n        ",
+                        "type": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tag",
+                    "name": "ion-item",
+                    "attribs": {
+                      "menu-close": "menu-close",
+                      "href": "#/app/search"
+                    },
+                    "children": [
+                      {
+                        "data": "\n          Search\n        ",
+                        "type": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tag",
+                    "name": "ion-item",
+                    "attribs": {
+                      "menu-close": "menu-close",
+                      "href": "#/app/browse"
+                    },
+                    "children": [
+                      {
+                        "data": "\n          Browse\n        ",
+                        "type": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tag",
+                    "name": "ion-item",
+                    "attribs": {
+                      "menu-close": "menu-close",
+                      "href": "#/app/playlists"
+                    },
+                    "children": [
+                      {
+                        "data": "\n          Playlists\n        ",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

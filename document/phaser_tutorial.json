@@ -1,0 +1,317 @@
+{
+    "trips": [{
+        "trip_name": "基礎平台遊戲",
+        "steps": [{
+            "step_name": "世界基礎",
+            "step_info": [{
+                "type": "text",
+                "content": "在這份教學中，將一步一步的做出簡單的平台遊戲，整個遊戲將由Phaser寫成"
+            }, {
+                "type": "text",
+                "content": "透過Phaser的Game方法，新增game物件，在其中設置畫面尺寸、遊戲的網頁元素、素材程式名稱preload、建立用程式名稱create、遊戲用程式名稱update"
+            }, {
+                "type": "code",
+                "content": [
+                    "var game = new Phaser.Game(480, 320, Phaser.AUTO, '', {",
+                    "    preload: preload,",
+                    "    create: create,",
+                    "    update: update",
+                    "});"
+                ]
+            }, {
+                "type": "text",
+                "content": "在game物件之後加上素材程式preload、建立用程式create、遊戲用程式update"
+            }, {
+                "type": "code",
+                "content": [
+                    "function preload() {}",
+                    "function create() {}",
+                    "function update() {}"
+                ]
+            }]
+        }, {
+            "step_name": "載入素材",
+            "step_info": [{
+                "type": "text",
+                "content": "在素材程式preload中建立圖示物件，並設置素材路徑"
+            }, {
+                "type": "text",
+                "content": "game.load.image 是指呼叫game物件載入圖片"
+            }, {
+                "type": "text",
+                "content": "game.load.spritesheet 是指呼叫game物件載入動畫片段圖片"
+            }, {
+                "type": "text",
+                "content": "第一個變數是素材在素材庫中的名稱，第二個變數是素材檔案的位置"
+            }, {
+                "type": "text",
+                "content": "32和48是指每一格的寬與高，並藉由該尺寸分割圖片，為動畫片段"
+            }, {
+                "type": "code",
+                "content": [
+                    "    game.load.image('sky', 'lib/assets/sky.png');",
+                    "    game.load.image('ground', 'lib/assets/platform.png');",
+                    "    game.load.image('star', 'lib/assets/star.png');",
+                    "    game.load.spritesheet('dude', 'lib/assets/dude.png', 32, 48);"
+                ]
+            }]
+        }, {
+            "step_name": "場景背景",
+            "step_info": [{
+                "type": "text",
+                "content": "在建立用程式create中，透過game物件的add方法，新增圖示物件，設置世界場景背景"
+            }, {
+                "type": "text",
+                "content": "前兩個變數，是指場景中的位置，分別是指x與y，最後一個變數為素材名稱"
+            }, {
+                "type": "code",
+                "content": [
+                    "game.add.sprite(0, 0, 'sky');"
+                ]
+            }]
+        }, {
+            "step_name": "場景物件",
+            "step_info": [{
+                "type": "text",
+                "content": "在建立用程式create上方，新增platforms物件，並為物件添加物理系統"
+            }, {
+                "type": "code",
+                "content": [
+                    "var platforms;"
+                ]
+            }, {
+                "type": "text",
+                "content": "接下來要在建立用程式create中，創造物件"
+            }, {
+                "type": "text",
+                "content": "透過game物件的physics物理系統物件，使用startSystem方法，加入ARCADE物理系統"
+            }, {
+                "type": "code",
+                "content": [
+                    "    game.physics.startSystem(Phaser.Physics.ARCADE);"
+                ]
+            }, {
+                "type": "text",
+                "content": "在game物件加入背景之後，告訴game物件，platforms物件是一個群體，並幫platforms物件加上物理屬性"
+            }, {
+                "type": "code",
+                "content": [
+                    "    platforms = game.add.group();",
+                    "    platforms.enableBody = true;"
+                ]
+            }, {
+                "type": "text",
+                "content": "創造地板ground物件給platforms物件，並設定ground的大小，是否可以移動"
+            }, {
+                "type": "code",
+                "content": [
+                    "    var ground = platforms.create(0, game.world.height - 64, 'ground');",
+                    "    ground.scale.setTo(2, 2);",
+                    "    ground.body.immovable = true;"
+                ]
+            }, {
+                "type": "text",
+                "content": "創造平台ledge物件給platforms物件，並設定ledge的大小，是否可以移動"
+            }, {
+                "type": "code",
+                "content": [
+                    "    var ledge = platforms.create(0, 100, 'ground');",
+                    "    ledge.body.immovable = true;",
+                    "    ledge = platforms.create(150, 250, 'ground');",
+                    "    ledge.body.immovable = true;"
+                ]
+            }]
+        }, {
+            "step_name": "玩家操作物件",
+            "step_info": [{
+                "type": "text",
+                "content": "新增玩家操作物件，包含其動畫與物理特性"
+            }, {
+                "type": "text",
+                "content": "在平台群組物件platforms上方加上玩家物件player"
+            }, {
+                "type": "code",
+                "content": [
+                    "var player;"
+                ]
+            }, {
+                "type": "text",
+                "content": "接下來要在建立用程式create中，創造玩家物件player"
+            }, {
+                "type": "text",
+                "content": "在game物件加入全部平台之後，告訴game物件，玩家物件player是一個動畫片段，並幫玩家物件player加上物理屬性"
+            }, {
+                "type": "text",
+                "content": "設定玩家物件player的彈性是0.2，重力是300向下，接受所有碰撞"
+            }, {
+                "type": "code",
+                "content": [
+                    "    player = game.add.sprite(32, game.world.height - 150, 'dude');",
+                    "    game.physics.arcade.enable(player);",
+                    "    player.body.bounce.y = 0.2;",
+                    "    player.body.gravity.y = 300;",
+                    "    player.body.collideWorldBounds = true;"
+                ]
+            }, {
+                "type": "text",
+                "content": "設定玩家物件有兩個動畫片段，分別為'left'和'right'"
+            }, {
+                "type": "code",
+                "content": [
+                    "    player.animations.add('left', [0, 1, 2, 3], 10, true);",
+                    "    player.animations.add('right', [5, 6, 7, 8], 10, true);"
+                ]
+            }]
+        }, {
+            "step_name": "物件基礎互動",
+            "step_info": [{
+                "type": "text",
+                "content": "在遊戲用程式update中添加玩家與場景物件之間的碰撞事件"
+            }, {
+                "type": "text",
+                "content": "透過game物件的physics物理系統物件，其中的ARCADE物理系統，以collide方法，為玩家物件player和平台群組platforms建立碰撞事件"
+            }, {
+                "type": "code",
+                "content": [
+                    "    game.physics.arcade.collide(player, platforms);"
+                ]
+            }]
+        }, {
+            "step_name": "玩家操作互動",
+            "step_info": [{
+                "type": "text",
+                "content": "添加控制互動事件，包含各種按鍵事件"
+            }, {
+                "type": "text",
+                "content": "在玩家物件player下方加上按鍵監聽物件cursors"
+            }, {
+                "type": "code",
+                "content": [
+                    "var cursors;"
+                ]
+            }, {
+                "type": "text",
+                "content": "接下來要在建立用程式create中，在game物件加入玩家物件之後，告訴game物件，按鍵監聽物件cursors是用來監聽鍵盤事件"
+            }, {
+                "type": "code",
+                "content": [
+                    "    cursors = game.input.keyboard.createCursorKeys();"
+                ]
+            }, {
+                "type": "text",
+                "content": "接下來要在遊戲用程式update中，在碰撞事件之後，停止玩家物件X軸上的力量"
+            }, {
+                "type": "code",
+                "content": [
+                    "    player.body.velocity.x = 0;"
+                ]
+            }, {
+                "type": "text",
+                "content": "設置特別按鍵按下後，要發生的變化"
+            }, {
+                "type": "img",
+                "content": "lib/assets/dude.png"
+            }, {
+                "type": "text",
+                "content": "如果按下的是左鍵，讓玩家物件增加朝左邊的力道，x軸的左邊是負值，設為-150，再讓玩家物件播放朝左走動的動畫"
+            }, {
+                "type": "text",
+                "content": "如果按下的是右鍵，讓玩家物件增加朝右邊的力道，x軸的左邊是正值，設為150，再讓玩家物件播放朝右走動的動畫"
+            }, {
+                "type": "text",
+                "content": "沒有任何按鍵按下時，讓玩家物件動畫停止，並設為朝向畫面的停止畫面"
+            }, {
+                "type": "text",
+                "content": "如果按下的是上鍵，而玩家物件下方有碰觸物件時，讓玩家物件增加朝上方的力道，y軸的上方是負值，設為-350"
+            }, {
+                "type": "code",
+                "content": [
+                    "    if (cursors.left.isDown) {",
+                    "        player.body.velocity.x = -150;",
+                    "        player.animations.play('left');",
+                    "    } else if (cursors.right.isDown) {",
+                    "        player.body.velocity.x = 150;",
+                    "        player.animations.play('right');",
+                    "    } else {",
+                    "        player.animations.stop();",
+                    "        player.frame = 4;",
+                    "    }",
+                    "    if (cursors.up.isDown && player.body.touching.down) {",
+                    "        player.body.velocity.y = -350;",
+                    "    }"
+                ]
+            }]
+        }, {
+            "step_name": "非玩家物件事件",
+            "step_info": [{
+                "type": "text",
+                "content": "添加非玩家物件事件，包含碰撞事件、物理關係，並添加至所設置之場景位置"
+            }, {
+                "type": "code",
+                "content": [
+                    "var stars;",
+                    "",
+                    "    stars = game.add.group();",
+                    "    stars.enableBody = true;",
+                    "    for (var i = 0; i < 12; i++) {",
+                    "        var star = stars.create(i * 32, 0, 'star');",
+                    "        star.body.gravity.y = 300;",
+                    "        star.body.bounce.y = 0.7 + Math.random() * 0.2;",
+                    "    }",
+                    "    cursors = game.input.keyboard.createCursorKeys();",
+                    "    game.physics.arcade.collide(stars, platforms);",
+                    "    game.physics.arcade.overlap(player, stars, collectStar, null, this);",
+                    "    player.body.velocity.x = 0;",
+                    "",
+                    "function collectStar(player, star) {",
+                    "    star.kill();",
+                    "}"
+                ]
+            }]
+        }, {
+            "step_name": "訊息更新",
+            "step_info": [{
+                "type": "text",
+                "content": "增加訊息畫面，碰撞事件之相關邏輯"
+            }, {
+                "type": "code",
+                "content": [
+                    "var score = 0;",
+                    "var scoreText;",
+                    "var gameover = false;",
+                    "",
+                    "    scoreText = game.add.text(16, 16, 'score: 0', {",
+                    "        fontSize: '32px',",
+                    "        fill: '#000'",
+                    "    });",
+                    "    cursors = game.input.keyboard.createCursorKeys();",
+                    "    if (!gameover) {",
+                    "        if (cursors.left.isDown) {",
+                    "            player.body.velocity.x = -150;",
+                    "            player.animations.play('left');",
+                    "        } else if (cursors.right.isDown) {",
+                    "            player.body.velocity.x = 150;",
+                    "            player.animations.play('right');",
+                    "        } else {",
+                    "            player.animations.stop();",
+                    "            player.frame = 4;",
+                    "        }",
+                    "        if (cursors.up.isDown && player.body.touching.down) {",
+                    "            player.body.velocity.y = -350;",
+                    "        }",
+                    "    }",
+                    "",
+                    "    score += 10;",
+                    "    scoreText.text = 'Score: ' + score;",
+                    "    if (score === 120) {",
+                    "        scoreText.text = 'Game Over!!';",
+                    "        gameover = true;",
+                    "        player.animations.stop();",
+                    "        player.frame = 4;",
+                    "    }",
+                    ""
+                ]
+            }]
+        }]
+    }]
+}

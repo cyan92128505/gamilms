@@ -1,0 +1,25 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">Ionic Class 1</h3>
+    </div>
+    <div class="modal-body">
+        <div class="survey_progress">
+            <div class="survey_progress_bar" ng-style="survey_complete">
+                <div class="survey_progress_shadow"></div>
+            </div>
+        </div>
+        <div class="radio-grp" ng-repeat="quest in quests track by $index">
+            <h4 class="title" ng-bind="($index+1) +': '+ quest.title"></h4>
+            <div class="radio-btn" ng-repeat="term in quest.terms track by $index" ng-click="choice($parent.$index, $index)">
+                <input type="radio" name="budget" value="0" />
+                <label ng-bind="term.term_name" ng-style="term.term_css"></label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="funcbuttons">
+            <a class="funcwhite" ng-click="close()">返回影片</a>
+            <a class="funcwhite" ng-click="send_answer()">遞交答案</a>
+        </div>
+    </div>
+</div>

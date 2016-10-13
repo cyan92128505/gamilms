@@ -1,0 +1,92 @@
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2 profile_well">
+        <!-- <div class="col-md-4 text-center profile_image">
+            <img class="profile_thumbnail" ng-src="{{user.image}}">
+        </div> -->
+
+        <div class="col-md-6 profile_image profile_font_color ">
+            <div class="profile_stat" ng-style="profile_info_image">
+                <h2 class="profile_stat_font" ng-bind="user.username"></h2>
+                <!-- <h3 ng-bind="'課程'+user.level"></h3> -->
+                <!-- <div class="profile_buttons">
+
+                </div> -->
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="profile_process_bar">
+                <div class="calorie-counter">
+                    <div class="chart chart--calorie js-chart">
+                        <div class="chart__container">
+                            <svg class="chart__background" x="0px" y="0px" height="220px" viewBox="0 0 220 220">
+                                <g>
+                                    <path d="M110,210c-55.1,0-100-44.9-100-100C10,54.9,54.9,10,110,10s100,44.9,100,100C210,165.1,165.1,210,110,210z" />
+                                </g>
+                            </svg>
+                            <svg class="chart__foreground" ng-style="progress_length" x="0px" y="0px" height="220px" viewBox="0 0 220 220">
+                                <g>
+                                    <path d="M110,210c-55.1,0-100-44.9-100-100C10,54.9,54.9,10,110,10s100,44.9,100,100C210,165.1,165.1,210,110,210z" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="chart__count">
+                            <div>
+                                <span class="js-count" count-to="{{user_get_point}}" duration="1" count-from="0">0</span> /
+                                <span class="js-count" count-to="{{total_point}}" duration="1" count-from="0">0</span>
+                            </div>
+                            課程進度
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile_start_button_group" ng-show="start_learn">
+            <a ng-show="start_learn_now" href="" class="profile_start_button" ng-click="ui_sref({url:'code'})">{{start_learn_btn_text}}</a>
+            <a ng-hide="start_learn_now" href="" class="profile_start_button" ng-click="start_answer_survey()">{{start_learn_btn_text}}</a>
+        </div>
+    </div>
+</div>
+<!-- <div class="row">
+    <div class="col-md-6 profile_col_2">
+        <div class="profile_counter">
+            <nvd3 options="subject_chart_options" data="subject_chart_data" class="with-3d-shadow with-transitions"></nvd3>
+        </div>
+    </div>
+    <div class="col-md-6 profile_col_2">
+        <div class="profile_counter">
+            <nvd3 options="engage_chart_options" data="engage_chart_data" class="with-3d-shadow with-transitions"></nvd3>
+        </div>
+    </div>
+</div> -->
+<div class="row">
+    <div class="col-md-6 profile_col_2">
+        <div class="profile_counter">
+            <h2>獎章</h2>
+            <hr/>
+            <md-button md-whiteframe="5" class="badge_icon_btn" aria-label="badge.arch_name" ng-repeat="badge in badges" gami-unit ng-click="gamiEmit_badge(badge)">
+                <md-tooltip md-direction="bottom">
+                    {{badge.name}}
+                </md-tooltip>
+                <md-icon md-svg-src="{{badge.image}}"></md-icon>
+            </md-button>
+            <!-- <div class="sport profile_badge_animation profilr_badge_info" ng-class="badge_color(badge.value)" ng-repeat="badge in badges" gami-unit>
+                <img ng-src="{{badge.image}}" ng-click="gamiEmit_badge(badge)" />
+                <label ng-bind="badge.name"></label>
+            </div> -->
+        </div>
+    </div>
+    <div class="col-md-6 profile_col_2">
+        <div class="profile_counter">
+            <h3>活動紀錄</h3>
+            <hr/>
+            <ul class="list-group profile_badge_animation">
+                <li class="list-group-item profile_badge_info profile_log_list_group_term" ng-click="gamiEmit_log(user_log)" ng-repeat="user_log in user_logs" gami-unit>
+                    <span ng-bind="user_log.timestamp"></span>
+                    <span></span>
+                    <span ng-bind="user_log.event_name"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

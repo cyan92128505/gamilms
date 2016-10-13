@@ -1,0 +1,102 @@
+[
+  {
+    "data": "!DOCTYPE html",
+    "type": "directive",
+    "name": "!DOCTYPE"
+  },
+  {
+    "type": "tag",
+    "name": "html",
+    "children": [
+      {
+        "type": "tag",
+        "name": "head",
+        "children": [
+          {
+            "type": "tag",
+            "name": "meta",
+            "attribs": {
+              "charset": "utf-8"
+            }
+          },
+          {
+            "type": "tag",
+            "name": "meta",
+            "attribs": {
+              "name": "viewport",
+              "content": "initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"
+            }
+          },
+          {
+            "type": "tag",
+            "name": "title"
+          },
+          {
+            "type": "tag",
+            "name": "link",
+            "attribs": {
+              "href": "lib/ionic/css/ionic.css",
+              "rel": "stylesheet"
+            }
+          },
+          {
+            "type": "tag",
+            "name": "link",
+            "attribs": {
+              "href": "css/style.css",
+              "rel": "stylesheet"
+            }
+          },
+          {
+            "type": "script",
+            "name": "script",
+            "attribs": {
+              "src": "lib/ionic/js/ionic.bundle.js"
+            }
+          },
+          {
+            "type": "script",
+            "name": "script",
+            "attribs": {
+              "src": "cordova.js"
+            }
+          },
+          {
+            "type": "script",
+            "name": "script",
+            "attribs": {
+              "src": "js/app.js"
+            }
+          },
+          {
+            "type": "script",
+            "name": "script",
+            "attribs": {
+              "src": "js/controllers.js"
+            }
+          },
+          {
+            "type": "script",
+            "name": "script",
+            "attribs": {
+              "src": "js/factory.js"
+            }
+          }
+        ]
+      },
+      {
+        "type": "tag",
+        "name": "body",
+        "attribs": {
+          "ng-app": "BookStoreApp"
+        },
+        "children": [
+          {
+            "type": "tag",
+            "name": "ion-nav-view"
+          }
+        ]
+      }
+    ]
+  }
+]

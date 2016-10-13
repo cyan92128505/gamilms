@@ -1,0 +1,37 @@
+[
+  {
+    "type": "tag",
+    "name": "ion-view",
+    "attribs": {
+      "view-title": "Playlists"
+    },
+    "children": [
+      {
+        "type": "tag",
+        "name": "ion-content",
+        "children": [
+          {
+            "type": "tag",
+            "name": "ion-list",
+            "children": [
+              {
+                "type": "tag",
+                "name": "ion-item",
+                "attribs": {
+                  "ng-repeat": "playlist in playlists",
+                  "href": "#/app/playlists/{{playlist.id}}"
+                },
+                "children": [
+                  {
+                    "data": "\n        {{playlist.title}}\n      ",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

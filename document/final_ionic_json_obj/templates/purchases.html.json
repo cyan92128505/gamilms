@@ -1,0 +1,148 @@
+[
+  {
+    "type": "tag",
+    "name": "ion-view",
+    "attribs": {
+      "view-title": "Your Purchases",
+      "cache-view": "false",
+      "hide-back-button": "true"
+    },
+    "children": [
+      {
+        "type": "tag",
+        "name": "ion-content",
+        "children": [
+          {
+            "type": "tag",
+            "name": "ion-list",
+            "children": [
+              {
+                "type": "tag",
+                "name": "div",
+                "attribs": {
+                  "ng-repeat": "group in groups"
+                },
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "ion-item",
+                    "attribs": {
+                      "class": "item-stable",
+                      "ng-click": "toggleGroup(group)",
+                      "ng-class": "{active: isGroupShown(group)}"
+                    },
+                    "children": [
+                      {
+                        "type": "tag",
+                        "name": "p",
+                        "children": [
+                          {
+                            "type": "tag",
+                            "name": "i",
+                            "attribs": {
+                              "class": "icon",
+                              "ng-class": "isGroupShown(group) ? 'ion-minus' : 'ion-plus'"
+                            }
+                          },
+                          {
+                            "data": " &nbsp;{{::group.name}}\n                        ",
+                            "type": "text"
+                          },
+                          {
+                            "type": "tag",
+                            "name": "span",
+                            "attribs": {
+                              "class": "badge badge-positive"
+                            },
+                            "children": [
+                              {
+                                "data": "{{::group.items.length}}",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "tag",
+                        "name": "p",
+                        "children": [
+                          {
+                            "data": "You paid : {{::group.total | currency}}",
+                            "type": "text"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tag",
+                    "name": "ion-item",
+                    "attribs": {
+                      "class": "item-accordion",
+                      "ng-repeat": "item in group.items",
+                      "ng-show": "isGroupShown(group)",
+                      "ng-href": "#/app/book/{{::item._id}}"
+                    },
+                    "children": [
+                      {
+                        "type": "tag",
+                        "name": "div",
+                        "attribs": {
+                          "class": "item-thumbnail-left"
+                        },
+                        "children": [
+                          {
+                            "type": "tag",
+                            "name": "img",
+                            "attribs": {
+                              "ng-src": "{{::item.image}}"
+                            }
+                          },
+                          {
+                            "type": "tag",
+                            "name": "h2",
+                            "children": [
+                              {
+                                "data": "{{::item.title}}",
+                                "type": "text"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "tag",
+                            "name": "p",
+                            "children": [
+                              {
+                                "data": "{{::item.short_description}}",
+                                "type": "text"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "tag",
+                            "name": "p",
+                            "children": [
+                              {
+                                "type": "tag",
+                                "name": "i",
+                                "attribs": {
+                                  "class": "icon ion-star",
+                                  "ng-repeat": "i in getNumber(item.rating) track by $index"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

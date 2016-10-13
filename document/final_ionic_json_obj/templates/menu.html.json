@@ -1,0 +1,186 @@
+[
+  {
+    "type": "tag",
+    "name": "ion-side-menus",
+    "attribs": {
+      "enable-menu-with-back-views": "true"
+    },
+    "children": [
+      {
+        "type": "tag",
+        "name": "ion-side-menu-content",
+        "children": [
+          {
+            "type": "tag",
+            "name": "ion-nav-bar",
+            "attribs": {
+              "class": "bar-assertive"
+            },
+            "children": [
+              {
+                "type": "tag",
+                "name": "ion-nav-back-button"
+              },
+              {
+                "type": "tag",
+                "name": "ion-nav-buttons",
+                "attribs": {
+                  "side": "left"
+                },
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "button",
+                    "attribs": {
+                      "class": "button button-icon button-clear ion-navicon",
+                      "menu-toggle": "left"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "tag",
+                "name": "ion-nav-buttons",
+                "attribs": {
+                  "side": "right"
+                },
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "a",
+                    "attribs": {
+                      "class": "button button-icon button-clear ion-android-cart",
+                      "href": "#/app/cart"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "name": "ion-nav-view",
+            "attribs": {
+              "name": "menuContent"
+            }
+          }
+        ]
+      },
+      {
+        "type": "tag",
+        "name": "ion-side-menu",
+        "attribs": {
+          "side": "left"
+        },
+        "children": [
+          {
+            "type": "tag",
+            "name": "ion-header-bar",
+            "attribs": {
+              "class": "bar-assertive"
+            },
+            "children": [
+              {
+                "type": "tag",
+                "name": "h1",
+                "attribs": {
+                  "class": "title"
+                },
+                "children": [
+                  {
+                    "data": "Menu",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "name": "ion-content",
+            "children": [
+              {
+                "type": "tag",
+                "name": "ion-list",
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "ion-item",
+                    "attribs": {
+                      "menu-close": "menu-close",
+                      "href": "#/app/browse"
+                    },
+                    "children": [
+                      {
+                        "data": "\n                    Browse Books\n                ",
+                        "type": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tag",
+                    "name": "ion-item",
+                    "attribs": {
+                      "menu-close": "menu-close",
+                      "href": "#/app/cart"
+                    },
+                    "children": [
+                      {
+                        "data": "\n                    My Cart\n                ",
+                        "type": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tag",
+                    "name": "ion-item",
+                    "attribs": {
+                      "menu-close": "menu-close",
+                      "href": "#/app/purchases"
+                    },
+                    "children": [
+                      {
+                        "data": "\n                    My Purchases\n                ",
+                        "type": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tag",
+                    "name": "ion-item",
+                    "attribs": {
+                      "menu-close": "menu-close",
+                      "ng-show": "isAuthenticated",
+                      "ng-click": "logout()"
+                    },
+                    "children": [
+                      {
+                        "data": "\n                    Logout\n                ",
+                        "type": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tag",
+                    "name": "ion-item",
+                    "attribs": {
+                      "menu-close": "menu-close",
+                      "ng-hide": "isAuthenticated",
+                      "ng-click": "loginFromMenu()"
+                    },
+                    "children": [
+                      {
+                        "data": "\n                    Login\n                ",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

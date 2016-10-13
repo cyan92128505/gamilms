@@ -1,0 +1,25 @@
+{
+    "init": [{
+        "command": "init",
+        "content": ""
+    }],
+    "application": [{
+        "command": "profile_avatar",
+        "content": "個人頁面"
+    }, {
+        "command": "code",
+        "content": "學習區"
+    }, {
+        "command": "leaderboard",
+        "content": "排行榜"
+    }, {
+        "command": "badge",
+        "content": "獎章"
+    }],
+    "profile": [],
+    "code": [],
+    "subject": [],
+    "video": [],
+    "leaderboard": [],
+    "badge": []
+}

@@ -1,0 +1,11 @@
+<div class="col-lg-5 col-lg-offset-2">
+    <h2>User Model</h2>
+    <table class="table">
+        <% for(key in user.toJSON() ) { if (user.hasOwnProperty(key)) { %>
+            <tr>
+                <td><%= key %>:</td>
+                <td class="boxy"><%= user[key] %></td>
+            </tr>
+        <% }} %>
+    </table>
+</div>

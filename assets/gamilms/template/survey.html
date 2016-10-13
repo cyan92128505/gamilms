@@ -1,0 +1,55 @@
+<div>
+    <div id="title_name" class="modal-header">
+        <h2 class="modal-title" ng-show="init_title"><b>有意義的遊戲化架構於線上學習管理系統</b>之研究調查問卷</h2>
+        <h2 class="modal-title" ng-hide="init_title" ng-bind="title_name"></h2>
+    </div>
+    <div class="modal-body">
+        <div class="survey_part_term_container" ng-show="init_show">
+            <h4>{{user_name}} 先生/小姐 您好！</h4>
+            <br />
+            <h4 class="">感謝您在百忙中撥冗填答此份問卷，本研究旨在瞭解您使用本研究之<b>遊戲化學習管理系統</b>後，針對網站的可用性、自我決定因素和內在動機影響之因素。</h4>
+            <h4 class="">請您仔細閱讀每一個題目後，請儘量以個人的實際感受及使用後的看法填寫，本問卷為純學術研究，採取不記名作答方式，您的回答僅用於學術研究分析，絕不作為商業性用途，所有資料也絕對保密，敬請安心作答。</h4>
+            <h4 class="">本問卷題項之建構係依據國內外專家學者對網站可用性、自我決定因素以及內在動機之研究發展而成。此份問卷需要您給予研究珍貴的意見，以臻理想。</h4>
+            <h4 class="">感謝您參與本研究！</h4>
+            <br />
+            <h4 class="">敬祝</h4>
+            <h4 class="">心想事成！萬事如意！</h4>
+            <br />
+            <br />
+            <h4 class="survey_footer">研究單位：國立彰化師範大學數位內容科技與管理碩士班</h4>
+            <h4 class="survey_footer">指導教授：張隆池	博士</h4>
+            <h4 class="survey_footer">研究生：廖瑋薪</h4>
+            <h4 class="survey_footer">電子信箱：<a href="mailto:aomashinku@gmail.com">aomashinku@gmail.com</a></h4>
+        </div>
+        <div ng-show="survey_show">
+            <div class="survey_part_term_container" ng-repeat="part in survey track by $index">
+                <h3><span class="radioValue" ng-bind="part.part_name"></span></h3>
+                <div ng-repeat="term in part.part_terms track by $index" ng-class="{'term_state_over': answer_css_state[survey_id-2][$parent.$index][$index]}">
+                    <hr />
+                    <h3><span class="radioValue" ng-bind="($parent.$index+1)+'-'+($index+1)+'：'+term.term_name"></span></h3>
+                    <div class="survey_part_term_container">
+                        <md-radio-group ng-model="answer[survey_id-1][$parent.$index][$index]">
+                            <md-radio-button ng-click="set_answer_state(survey_id-2,$parent.$parent.$index,$parent.$index)" ng-value="$index" class="md-primary survey_option" ng-repeat="i in term.term_option track by $index">{{i}}</md-radio-button>
+                        </md-radio-group>
+                        <div ng-show="((term.term_option.length === 0)?true:false)">
+                            <textarea ng-model="answer[survey_id-1][$parent.$index][$index]" rows="5" md-select-on-focus ng-click="set_answer_state(survey_id-2,$parent.$index,$index)"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <br />
+            </div>
+        </div>
+        <div class="survey_part_term_container" ng-show="info_show">
+            <h3 ng-bind="survey_info"></h3>
+        </div>
+        <div class="survey_part_term_container" ng-show="over_show">
+            <h3 ng-bind="survey_info"></h3>
+        </div>
+    </div>
+    <p class="tut_button" type="button" ng-click="show_survey(survey_id)" ng-show="init_show">開始填寫</p>
+    <p class="tut_button_group" ng-show="survey_show">
+        <span class="tut_button_left" type="button" ng-click="show_survey(old_survey_id)">上一頁</span><span class="tut_button_right" type="button" ng-click="show_survey(survey_id)">下一頁</span>
+    </p>
+    <p class="tut_button" type="button" ng-click="show_survey(survey_id)" ng-show="info_show">檢查量表</p>
+    <p class="tut_button" type="button" ng-click="close()" ng-show="over_show">感謝填寫</p>
+</div>

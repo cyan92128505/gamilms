@@ -1,0 +1,12 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title" ng-bind="tutor_info"></h3>
+    </div>
+    <div class="modal-body code-img text-center">
+        <img class="tutor_img" ng-src="{{tutor_img}}" alt="" ng-click="ok()"/>
+    </div>
+    <p class="tut_button_group">
+        <span class="tut_button_left" type="button" ng-click="close()">上一步</span>
+        <span class="tut_button_right" type="button" ng-click="ok()">下一步</span>
+    </p>
+</div>

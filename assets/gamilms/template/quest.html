@@ -1,0 +1,23 @@
+<div>
+    <div id="title_name" class="modal-header">
+        <h2 class="modal-title" ng-bind="title_name"></h2>
+    </div>
+    <div class="modal-body">
+        <div class="survey_part_term_container" ng-repeat="quest in quests track by $index">
+            <hr />
+            <h3><span class="radioValue" ng-bind="($index+1)+'. '+quest.quest_title"></span></h3>
+            <br />
+            <div class="survey_part_term_container" layout="column" layout-wrap layout-gt-sm="row">
+                <div flex-xs flex="100" ng-repeat="i in quest.quest_terms track by $index">
+                    <md-checkbox ng-model="quest_answer[$parent.$index][$index]" class="md-primary" aria-label="{{i}}">
+                        <h4 ng-bind="i"></h4>
+                    </md-checkbox>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="tut_button_group">
+        <span class="tut_button_left" type="button" ng-click="close()">取消</span>
+        <span class="tut_button_right" type="button" ng-click="answer()">確定</span>
+    </p>
+</div>

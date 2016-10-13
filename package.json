@@ -1,0 +1,61 @@
+{
+    "name": "gamilms",
+    "version": "1.0.0",
+    "description": "a gamification learning management system",
+    "main": "server.js",
+    "scripts": {
+        "test": " DEBUG=express:* node server.js",
+        "init": " node ./tool/destroy_all.js"
+    },
+    "keywords": [
+        "gamification",
+        "lms"
+    ],
+    "author": "Aoma Shinku <cyan92128505@gmail.com> (https://github.com/cyan92128505/)",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cyan92128505/gamilms.git"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.15.0",
+        "colors": "^1.1.2",
+        "connect-ensure-login": "^0.1.1",
+        "connect-mongo": "^1.1.0",
+        "cookie-parser": "^1.4.1",
+        "death": "^1.0.0",
+        "ejs": "^2.4.1",
+        "express": "^4.13.4",
+        "express-ejs-layouts": "^2.0.0",
+        "express-session": "^1.13.0",
+        "express-session-passport-cleanup": "^1.0.3",
+        "filewalker": "^0.1.2",
+        "fs-extra": "^0.26.5",
+        "js-beautify": "^1.6.2",
+        "js-string-escape": "^1.0.1",
+        "jsdom": "^8.4.0",
+        "jsesc": "^0.5.0",
+        "jsondiffpatch": "^0.1.43",
+        "markdown": "^0.5.0",
+        "mongoose": "^4.4.3",
+        "mongoose-find-one-or-create": "^0.2.0",
+        "morgan-debug": "^1.0.0",
+        "multer": "^1.1.0",
+        "node-base64-image": "^0.1.1",
+        "normalize.css": "^4.0.0",
+        "ot-text": "^1.0.1",
+        "passport": "^0.3.2",
+        "passport-facebook": "^2.1.0",
+        "recast": "^0.11.5",
+        "require-dir": "^0.3.0",
+        "serve-static": "^1.10.2",
+        "strip-comments": "^0.4.4",
+        "split": "^1.0.0",
+        "traverse": "^0.6.6"
+    },
+    "private": true,
+    "every_package": "latest",
+    "devDependencies": {
+
+    }
+}

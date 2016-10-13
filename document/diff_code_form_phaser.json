@@ -1,0 +1,317 @@
+[
+  [
+    {
+      "diff_type": "insert",
+      "old_init_index": 0,
+      "old_final_index": 0,
+      "new_init_index": 0,
+      "new_final_index": 5,
+      "diff_code_array": [
+        "var game = new Phaser.Game(480, 320, Phaser.AUTO, '', {",
+        "    preload: preload,",
+        "    create: create,",
+        "    update: update",
+        "});"
+      ]
+    },
+    {
+      "diff_type": "insert",
+      "old_init_index": 1,
+      "old_final_index": 1,
+      "new_init_index": 6,
+      "new_final_index": 11,
+      "diff_code_array": [
+        "function preload() {}",
+        "function create() {}",
+        "function update() {}"
+      ]
+    }
+  ],
+  [
+    {
+      "diff_type": "replace",
+      "old_init_index": 6,
+      "old_final_index": 7,
+      "new_init_index": 6,
+      "new_final_index": 12,
+      "diff_code_array": [
+        "function preload() {",
+        "    game.load.image('sky', 'lib/assets/sky.png');",
+        "    game.load.image('ground', 'lib/assets/platform.png');",
+        "    game.load.image('star', 'lib/assets/star.png');",
+        "    game.load.spritesheet('dude', 'lib/assets/dude.png', 32, 48);",
+        "}"
+      ]
+    }
+  ],
+  [
+    {
+      "diff_type": "replace",
+      "old_init_index": 13,
+      "old_final_index": 14,
+      "new_init_index": 13,
+      "new_final_index": 16,
+      "diff_code_array": [
+        "function create() {",
+        "    game.add.sprite(0, 0, 'sky');",
+        "}"
+      ]
+    }
+  ],
+  [
+    {
+      "diff_type": "insert",
+      "old_init_index": 12,
+      "old_final_index": 12,
+      "new_init_index": 12,
+      "new_final_index": 13,
+      "diff_code_array": [
+        "var platforms;"
+      ]
+    },
+    {
+      "diff_type": "insert",
+      "old_init_index": 14,
+      "old_final_index": 14,
+      "new_init_index": 15,
+      "new_final_index": 16,
+      "diff_code_array": [
+        "    game.physics.startSystem(Phaser.Physics.ARCADE);",
+        "    game.add.sprite(0, 0, 'sky');"
+      ]
+    },
+    {
+      "diff_type": "insert",
+      "old_init_index": 15,
+      "old_final_index": 15,
+      "new_init_index": 17,
+      "new_final_index": 26,
+      "diff_code_array": [
+        "    platforms = game.add.group();",
+        "    platforms.enableBody = true;",
+        "    var ground = platforms.create(0, game.world.height - 64, 'ground');",
+        "    ground.scale.setTo(2, 2);",
+        "    ground.body.immovable = true;",
+        "    var ledge = platforms.create(0, 100, 'ground');",
+        "    ledge.body.immovable = true;",
+        "    ledge = platforms.create(150, 250, 'ground');",
+        "    ledge.body.immovable = true;",
+        "}"
+      ]
+    }
+  ],
+  [
+    {
+      "diff_type": "insert",
+      "old_init_index": 12,
+      "old_final_index": 12,
+      "new_init_index": 12,
+      "new_final_index": 13,
+      "diff_code_array": [
+        "var player;",
+        "var platforms;"
+      ]
+    },
+    {
+      "diff_type": "insert",
+      "old_init_index": 26,
+      "old_final_index": 26,
+      "new_init_index": 27,
+      "new_final_index": 34,
+      "diff_code_array": [
+        "    player = game.add.sprite(32, game.world.height - 150, 'dude');",
+        "    game.physics.arcade.enable(player);",
+        "    player.body.bounce.y = 0.2;",
+        "    player.body.gravity.y = 300;",
+        "    player.body.collideWorldBounds = true;",
+        "    player.animations.add('left', [0, 1, 2, 3], 10, true);",
+        "    player.animations.add('right', [5, 6, 7, 8], 10, true);",
+        "}"
+      ]
+    }
+  ],
+  [
+    {
+      "diff_type": "replace",
+      "old_init_index": 36,
+      "old_final_index": 37,
+      "new_init_index": 36,
+      "new_final_index": 39,
+      "diff_code_array": [
+        "function update() {",
+        "    game.physics.arcade.collide(player, platforms);",
+        "}"
+      ]
+    }
+  ],
+  [
+    {
+      "diff_type": "insert",
+      "old_init_index": 14,
+      "old_final_index": 14,
+      "new_init_index": 14,
+      "new_final_index": 15,
+      "diff_code_array": [
+        "var cursors;"
+      ]
+    },
+    {
+      "diff_type": "insert",
+      "old_init_index": 34,
+      "old_final_index": 34,
+      "new_init_index": 35,
+      "new_final_index": 36,
+      "diff_code_array": [
+        "    cursors = game.input.keyboard.createCursorKeys();",
+        "}"
+      ]
+    },
+    {
+      "diff_type": "insert",
+      "old_init_index": 38,
+      "old_final_index": 38,
+      "new_init_index": 40,
+      "new_final_index": 54,
+      "diff_code_array": [
+        "    player.body.velocity.x = 0;",
+        "    if (cursors.left.isDown) {",
+        "        player.body.velocity.x = -150;",
+        "        player.animations.play('left');",
+        "    } else if (cursors.right.isDown) {",
+        "        player.body.velocity.x = 150;",
+        "        player.animations.play('right');",
+        "    } else {",
+        "        player.animations.stop();",
+        "        player.frame = 4;",
+        "    }",
+        "    if (cursors.up.isDown && player.body.touching.down) {",
+        "        player.body.velocity.y = -350;",
+        "    }",
+        "}"
+      ]
+    }
+  ],
+  [
+    {
+      "diff_type": "insert",
+      "old_init_index": 15,
+      "old_final_index": 15,
+      "new_init_index": 15,
+      "new_final_index": 16,
+      "diff_code_array": [
+        "var stars;"
+      ]
+    },
+    {
+      "diff_type": "insert",
+      "old_init_index": 35,
+      "old_final_index": 35,
+      "new_init_index": 36,
+      "new_final_index": 43,
+      "diff_code_array": [
+        "    stars = game.add.group();",
+        "    stars.enableBody = true;",
+        "    for (var i = 0; i < 12; i++) {",
+        "        var star = stars.create(i * 32, 0, 'star');",
+        "        star.body.gravity.y = 300;",
+        "        star.body.bounce.y = 0.7 + Math.random() * 0.2;",
+        "    }",
+        "    cursors = game.input.keyboard.createCursorKeys();"
+      ]
+    },
+    {
+      "diff_type": "insert",
+      "old_init_index": 40,
+      "old_final_index": 40,
+      "new_init_index": 48,
+      "new_final_index": 50,
+      "diff_code_array": [
+        "    game.physics.arcade.collide(stars, platforms);",
+        "    game.physics.arcade.overlap(player, stars, collectStar, null, this);",
+        "    player.body.velocity.x = 0;"
+      ]
+    },
+    {
+      "diff_type": "insert",
+      "old_init_index": 55,
+      "old_final_index": 55,
+      "new_init_index": 65,
+      "new_final_index": 69,
+      "diff_code_array": [
+        "function collectStar(player, star) {",
+        "    star.kill();",
+        "}"
+      ]
+    }
+  ],
+  [
+    {
+      "diff_type": "insert",
+      "old_init_index": 16,
+      "old_final_index": 16,
+      "new_init_index": 16,
+      "new_final_index": 19,
+      "diff_code_array": [
+        "var score = 0;",
+        "var scoreText;",
+        "var gameover = false;"
+      ]
+    },
+    {
+      "diff_type": "insert",
+      "old_init_index": 43,
+      "old_final_index": 43,
+      "new_init_index": 46,
+      "new_final_index": 50,
+      "diff_code_array": [
+        "    scoreText = game.add.text(16, 16, 'score: 0', {",
+        "        fontSize: '32px',",
+        "        fill: '#000'",
+        "    });",
+        "    cursors = game.input.keyboard.createCursorKeys();"
+      ]
+    },
+    {
+      "diff_type": "replace",
+      "old_init_index": 51,
+      "old_final_index": 63,
+      "new_init_index": 58,
+      "new_final_index": 72,
+      "diff_code_array": [
+        "    if (!gameover) {",
+        "        if (cursors.left.isDown) {",
+        "            player.body.velocity.x = -150;",
+        "            player.animations.play('left');",
+        "        } else if (cursors.right.isDown) {",
+        "            player.body.velocity.x = 150;",
+        "            player.animations.play('right');",
+        "        } else {",
+        "            player.animations.stop();",
+        "            player.frame = 4;",
+        "        }",
+        "        if (cursors.up.isDown && player.body.touching.down) {",
+        "            player.body.velocity.y = -350;",
+        "        }",
+        "    }"
+      ]
+    },
+    {
+      "diff_type": "insert",
+      "old_init_index": 68,
+      "old_final_index": 68,
+      "new_init_index": 77,
+      "new_final_index": 85,
+      "diff_code_array": [
+        "    score += 10;",
+        "    scoreText.text = 'Score: ' + score;",
+        "    if (score === 120) {",
+        "        scoreText.text = 'Game Over!!';",
+        "        gameover = true;",
+        "        player.animations.stop();",
+        "        player.frame = 4;",
+        "    }",
+        "}"
+      ]
+    }
+  ]
+]

@@ -1,0 +1,424 @@
+[
+  {
+    "type": "tag",
+    "name": "ion-modal-view",
+    "children": [
+      {
+        "type": "tag",
+        "name": "div",
+        "attribs": {
+          "class": "tabs-striped tabs-background-assertive tabs-color-light"
+        },
+        "children": [
+          {
+            "type": "tag",
+            "name": "div",
+            "attribs": {
+              "class": "tabs"
+            },
+            "children": [
+              {
+                "type": "tag",
+                "name": "a",
+                "attribs": {
+                  "class": "tab-item",
+                  "ng-class": "{active : viewLogin}",
+                  "href": "javascript:",
+                  "ng-click": "switchTab('login')"
+                },
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "i",
+                    "attribs": {
+                      "class": "icon ion-locked"
+                    }
+                  },
+                  {
+                    "data": " Login\n            ",
+                    "type": "text"
+                  }
+                ]
+              },
+              {
+                "type": "tag",
+                "name": "a",
+                "attribs": {
+                  "class": "tab-item",
+                  "ng-class": "{active : !viewLogin}",
+                  "href": "javascript:",
+                  "ng-click": "switchTab('register')"
+                },
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "i",
+                    "attribs": {
+                      "class": "icon ion-person-add"
+                    }
+                  },
+                  {
+                    "data": " Register\n            ",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "data": " login pane ",
+        "type": "comment"
+      },
+      {
+        "type": "tag",
+        "name": "ion-pane",
+        "attribs": {
+          "ng-show": "viewLogin"
+        },
+        "children": [
+          {
+            "type": "tag",
+            "name": "ion-header-bar",
+            "children": [
+              {
+                "type": "tag",
+                "name": "h1",
+                "attribs": {
+                  "class": "title"
+                },
+                "children": [
+                  {
+                    "data": "Login",
+                    "type": "text"
+                  }
+                ]
+              },
+              {
+                "type": "tag",
+                "name": "div",
+                "attribs": {
+                  "class": "buttons"
+                },
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "button",
+                    "attribs": {
+                      "class": "button button-assertive",
+                      "ng-click": "hide()"
+                    },
+                    "children": [
+                      {
+                        "data": "Close",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "name": "ion-content",
+            "children": [
+              {
+                "type": "tag",
+                "name": "form",
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "div",
+                    "attribs": {
+                      "class": "list"
+                    },
+                    "children": [
+                      {
+                        "type": "tag",
+                        "name": "label",
+                        "attribs": {
+                          "class": "item item-input"
+                        },
+                        "children": [
+                          {
+                            "type": "tag",
+                            "name": "span",
+                            "attribs": {
+                              "class": "input-label"
+                            },
+                            "children": [
+                              {
+                                "data": "Email Address",
+                                "type": "text"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "tag",
+                            "name": "input",
+                            "attribs": {
+                              "type": "email",
+                              "ng-model": "user.email"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "tag",
+                        "name": "label",
+                        "attribs": {
+                          "class": "item item-input"
+                        },
+                        "children": [
+                          {
+                            "type": "tag",
+                            "name": "span",
+                            "attribs": {
+                              "class": "input-label"
+                            },
+                            "children": [
+                              {
+                                "data": "Password",
+                                "type": "text"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "tag",
+                            "name": "input",
+                            "attribs": {
+                              "type": "password",
+                              "ng-model": "user.password"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "tag",
+                        "name": "label",
+                        "attribs": {
+                          "class": "item"
+                        },
+                        "children": [
+                          {
+                            "type": "tag",
+                            "name": "button",
+                            "attribs": {
+                              "class": "button button-block button-assertive",
+                              "ng-click": "login()",
+                              "ng-disabled": "!user.email || !user.password",
+                              "type": "submit"
+                            },
+                            "children": [
+                              {
+                                "data": "Log in",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "data": " register pane ",
+        "type": "comment"
+      },
+      {
+        "type": "tag",
+        "name": "ion-pane",
+        "attribs": {
+          "ng-hide": "viewLogin"
+        },
+        "children": [
+          {
+            "type": "tag",
+            "name": "ion-header-bar",
+            "children": [
+              {
+                "type": "tag",
+                "name": "h1",
+                "attribs": {
+                  "class": "title"
+                },
+                "children": [
+                  {
+                    "data": "Register",
+                    "type": "text"
+                  }
+                ]
+              },
+              {
+                "type": "tag",
+                "name": "div",
+                "attribs": {
+                  "class": "buttons"
+                },
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "button",
+                    "attribs": {
+                      "class": "button button-assertive",
+                      "ng-click": "hide()"
+                    },
+                    "children": [
+                      {
+                        "data": "Close",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "name": "ion-content",
+            "children": [
+              {
+                "type": "tag",
+                "name": "form",
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "div",
+                    "attribs": {
+                      "class": "list"
+                    },
+                    "children": [
+                      {
+                        "type": "tag",
+                        "name": "label",
+                        "attribs": {
+                          "class": "item item-input"
+                        },
+                        "children": [
+                          {
+                            "type": "tag",
+                            "name": "span",
+                            "attribs": {
+                              "class": "input-label"
+                            },
+                            "children": [
+                              {
+                                "data": "Name",
+                                "type": "text"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "tag",
+                            "name": "input",
+                            "attribs": {
+                              "type": "text",
+                              "ng-model": "user.name"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "tag",
+                        "name": "label",
+                        "attribs": {
+                          "class": "item item-input"
+                        },
+                        "children": [
+                          {
+                            "type": "tag",
+                            "name": "span",
+                            "attribs": {
+                              "class": "input-label"
+                            },
+                            "children": [
+                              {
+                                "data": "Email Address",
+                                "type": "text"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "tag",
+                            "name": "input",
+                            "attribs": {
+                              "type": "text",
+                              "ng-model": "user.email"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "tag",
+                        "name": "label",
+                        "attribs": {
+                          "class": "item item-input"
+                        },
+                        "children": [
+                          {
+                            "type": "tag",
+                            "name": "span",
+                            "attribs": {
+                              "class": "input-label"
+                            },
+                            "children": [
+                              {
+                                "data": "Password",
+                                "type": "text"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "tag",
+                            "name": "input",
+                            "attribs": {
+                              "type": "password",
+                              "ng-model": "user.password"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "tag",
+                        "name": "label",
+                        "attribs": {
+                          "class": "item"
+                        },
+                        "children": [
+                          {
+                            "type": "tag",
+                            "name": "button",
+                            "attribs": {
+                              "class": "button button-block button-assertive",
+                              "ng-click": "register()",
+                              "ng-disabled": "!user.name || !user.email || !user.password",
+                              "type": "submit"
+                            },
+                            "children": [
+                              {
+                                "data": "Register",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

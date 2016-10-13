@@ -1,0 +1,157 @@
+[
+  {
+    "type": "tag",
+    "name": "ion-modal-view",
+    "children": [
+      {
+        "type": "tag",
+        "name": "ion-header-bar",
+        "children": [
+          {
+            "type": "tag",
+            "name": "h1",
+            "attribs": {
+              "class": "title"
+            },
+            "children": [
+              {
+                "data": "Login",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "tag",
+            "name": "div",
+            "attribs": {
+              "class": "buttons"
+            },
+            "children": [
+              {
+                "type": "tag",
+                "name": "button",
+                "attribs": {
+                  "class": "button button-clear",
+                  "ng-click": "closeLogin()"
+                },
+                "children": [
+                  {
+                    "data": "Close",
+                    "type": "text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "tag",
+        "name": "ion-content",
+        "children": [
+          {
+            "type": "tag",
+            "name": "form",
+            "attribs": {
+              "ng-submit": "doLogin()"
+            },
+            "children": [
+              {
+                "type": "tag",
+                "name": "div",
+                "attribs": {
+                  "class": "list"
+                },
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "label",
+                    "attribs": {
+                      "class": "item item-input"
+                    },
+                    "children": [
+                      {
+                        "type": "tag",
+                        "name": "span",
+                        "attribs": {
+                          "class": "input-label"
+                        },
+                        "children": [
+                          {
+                            "data": "Username",
+                            "type": "text"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "tag",
+                        "name": "input",
+                        "attribs": {
+                          "type": "text",
+                          "ng-model": "loginData.username"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tag",
+                    "name": "label",
+                    "attribs": {
+                      "class": "item item-input"
+                    },
+                    "children": [
+                      {
+                        "type": "tag",
+                        "name": "span",
+                        "attribs": {
+                          "class": "input-label"
+                        },
+                        "children": [
+                          {
+                            "data": "Password",
+                            "type": "text"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "tag",
+                        "name": "input",
+                        "attribs": {
+                          "type": "password",
+                          "ng-model": "loginData.password"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tag",
+                    "name": "label",
+                    "attribs": {
+                      "class": "item"
+                    },
+                    "children": [
+                      {
+                        "type": "tag",
+                        "name": "button",
+                        "attribs": {
+                          "class": "button button-block button-positive",
+                          "type": "submit"
+                        },
+                        "children": [
+                          {
+                            "data": "Log in",
+                            "type": "text"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

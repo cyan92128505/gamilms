@@ -1,0 +1,2265 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "game"
+          },
+          "init": {
+            "type": "NewExpression",
+            "callee": {
+              "type": "MemberExpression",
+              "computed": false,
+              "object": {
+                "type": "Identifier",
+                "name": "Phaser"
+              },
+              "property": {
+                "type": "Identifier",
+                "name": "Game"
+              }
+            },
+            "arguments": [
+              {
+                "type": "Literal",
+                "value": 580,
+                "raw": "580"
+              },
+              {
+                "type": "Literal",
+                "value": 300,
+                "raw": "300"
+              },
+              {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "Phaser"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "AUTO"
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "",
+                "raw": "''"
+              },
+              {
+                "type": "ObjectExpression",
+                "properties": [
+                  {
+                    "type": "Property",
+                    "key": {
+                      "type": "Identifier",
+                      "name": "preload"
+                    },
+                    "computed": false,
+                    "value": {
+                      "type": "Identifier",
+                      "name": "preload"
+                    },
+                    "kind": "init",
+                    "method": false,
+                    "shorthand": false
+                  },
+                  {
+                    "type": "Property",
+                    "key": {
+                      "type": "Identifier",
+                      "name": "create"
+                    },
+                    "computed": false,
+                    "value": {
+                      "type": "Identifier",
+                      "name": "create"
+                    },
+                    "kind": "init",
+                    "method": false,
+                    "shorthand": false
+                  },
+                  {
+                    "type": "Property",
+                    "key": {
+                      "type": "Identifier",
+                      "name": "update"
+                    },
+                    "computed": false,
+                    "value": {
+                      "type": "Identifier",
+                      "name": "update"
+                    },
+                    "kind": "init",
+                    "method": false,
+                    "shorthand": false
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "preload"
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "game"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "load"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "image"
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "sky",
+                  "raw": "'sky'"
+                },
+                {
+                  "type": "Literal",
+                  "value": "lib/assets/sky.png",
+                  "raw": "'lib/assets/sky.png'"
+                }
+              ]
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "game"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "load"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "image"
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "ground",
+                  "raw": "'ground'"
+                },
+                {
+                  "type": "Literal",
+                  "value": "lib/assets/platform.png",
+                  "raw": "'lib/assets/platform.png'"
+                }
+              ]
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "game"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "load"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "image"
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "star",
+                  "raw": "'star'"
+                },
+                {
+                  "type": "Literal",
+                  "value": "lib/assets/star.png",
+                  "raw": "'lib/assets/star.png'"
+                }
+              ]
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "game"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "load"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "spritesheet"
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "dude",
+                  "raw": "'dude'"
+                },
+                {
+                  "type": "Literal",
+                  "value": "lib/assets/dude.png",
+                  "raw": "'lib/assets/dude.png'"
+                },
+                {
+                  "type": "Literal",
+                  "value": 32,
+                  "raw": "32"
+                },
+                {
+                  "type": "Literal",
+                  "value": 48,
+                  "raw": "48"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "generator": false,
+      "expression": false
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "player"
+          },
+          "init": null
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "platforms"
+          },
+          "init": null
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "cursors"
+          },
+          "init": null
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "stars"
+          },
+          "init": null
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "score"
+          },
+          "init": {
+            "type": "Literal",
+            "value": 0,
+            "raw": "0"
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "scoreText"
+          },
+          "init": null
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "create"
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "game"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "physics"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "startSystem"
+                }
+              },
+              "arguments": [
+                {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "Phaser"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "Physics"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "ARCADE"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "game"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "add"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "sprite"
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": 0,
+                  "raw": "0"
+                },
+                {
+                  "type": "Literal",
+                  "value": 0,
+                  "raw": "0"
+                },
+                {
+                  "type": "Literal",
+                  "value": "sky",
+                  "raw": "'sky'"
+                }
+              ]
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "Identifier",
+                "name": "platforms"
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "game"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "add"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "group"
+                  }
+                },
+                "arguments": []
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "platforms"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "enableBody"
+                }
+              },
+              "right": {
+                "type": "Literal",
+                "value": true,
+                "raw": "true"
+              }
+            }
+          },
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "ground"
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "platforms"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "create"
+                    }
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": 0,
+                      "raw": "0"
+                    },
+                    {
+                      "type": "BinaryExpression",
+                      "operator": "-",
+                      "left": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "game"
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "world"
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "height"
+                        }
+                      },
+                      "right": {
+                        "type": "Literal",
+                        "value": 64,
+                        "raw": "64"
+                      }
+                    },
+                    {
+                      "type": "Literal",
+                      "value": "ground",
+                      "raw": "'ground'"
+                    }
+                  ]
+                }
+              }
+            ],
+            "kind": "var"
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "ground"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "scale"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "setTo"
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": 2,
+                  "raw": "2"
+                },
+                {
+                  "type": "Literal",
+                  "value": 2,
+                  "raw": "2"
+                }
+              ]
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "ground"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "body"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "immovable"
+                }
+              },
+              "right": {
+                "type": "Literal",
+                "value": true,
+                "raw": "true"
+              }
+            }
+          },
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "ledge"
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "platforms"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "create"
+                    }
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": 400,
+                      "raw": "400"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": 400,
+                      "raw": "400"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": "ground",
+                      "raw": "'ground'"
+                    }
+                  ]
+                }
+              }
+            ],
+            "kind": "var"
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "ledge"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "body"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "immovable"
+                }
+              },
+              "right": {
+                "type": "Literal",
+                "value": true,
+                "raw": "true"
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "Identifier",
+                "name": "ledge"
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "platforms"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "create"
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "UnaryExpression",
+                    "operator": "-",
+                    "argument": {
+                      "type": "Literal",
+                      "value": 150,
+                      "raw": "150"
+                    },
+                    "prefix": true
+                  },
+                  {
+                    "type": "Literal",
+                    "value": 250,
+                    "raw": "250"
+                  },
+                  {
+                    "type": "Literal",
+                    "value": "ground",
+                    "raw": "'ground'"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "ledge"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "body"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "immovable"
+                }
+              },
+              "right": {
+                "type": "Literal",
+                "value": true,
+                "raw": "true"
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "Identifier",
+                "name": "player"
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "game"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "add"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "sprite"
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": 32,
+                    "raw": "32"
+                  },
+                  {
+                    "type": "BinaryExpression",
+                    "operator": "-",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "game"
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "world"
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "height"
+                      }
+                    },
+                    "right": {
+                      "type": "Literal",
+                      "value": 150,
+                      "raw": "150"
+                    }
+                  },
+                  {
+                    "type": "Literal",
+                    "value": "dude",
+                    "raw": "'dude'"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "game"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "physics"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "arcade"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "enable"
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Identifier",
+                  "name": "player"
+                }
+              ]
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "player"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "body"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "bounce"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "y"
+                }
+              },
+              "right": {
+                "type": "Literal",
+                "value": 0.2,
+                "raw": "0.2"
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "player"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "body"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "gravity"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "y"
+                }
+              },
+              "right": {
+                "type": "Literal",
+                "value": 300,
+                "raw": "300"
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "player"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "body"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "collideWorldBounds"
+                }
+              },
+              "right": {
+                "type": "Literal",
+                "value": true,
+                "raw": "true"
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "player"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "animations"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "add"
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "left",
+                  "raw": "'left'"
+                },
+                {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": 0,
+                      "raw": "0"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": 1,
+                      "raw": "1"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": 2,
+                      "raw": "2"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": 3,
+                      "raw": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "Literal",
+                  "value": 10,
+                  "raw": "10"
+                },
+                {
+                  "type": "Literal",
+                  "value": true,
+                  "raw": "true"
+                }
+              ]
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "player"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "animations"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "add"
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "right",
+                  "raw": "'right'"
+                },
+                {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": 5,
+                      "raw": "5"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": 6,
+                      "raw": "6"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": 7,
+                      "raw": "7"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": 8,
+                      "raw": "8"
+                    }
+                  ]
+                },
+                {
+                  "type": "Literal",
+                  "value": 10,
+                  "raw": "10"
+                },
+                {
+                  "type": "Literal",
+                  "value": true,
+                  "raw": "true"
+                }
+              ]
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "Identifier",
+                "name": "stars"
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "game"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "add"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "group"
+                  }
+                },
+                "arguments": []
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "stars"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "enableBody"
+                }
+              },
+              "right": {
+                "type": "Literal",
+                "value": true,
+                "raw": "true"
+              }
+            }
+          },
+          {
+            "type": "ForStatement",
+            "init": {
+              "type": "VariableDeclaration",
+              "declarations": [
+                {
+                  "type": "VariableDeclarator",
+                  "id": {
+                    "type": "Identifier",
+                    "name": "i"
+                  },
+                  "init": {
+                    "type": "Literal",
+                    "value": 0,
+                    "raw": "0"
+                  }
+                }
+              ],
+              "kind": "var"
+            },
+            "test": {
+              "type": "BinaryExpression",
+              "operator": "<",
+              "left": {
+                "type": "Identifier",
+                "name": "i"
+              },
+              "right": {
+                "type": "Literal",
+                "value": 12,
+                "raw": "12"
+              }
+            },
+            "update": {
+              "type": "UpdateExpression",
+              "operator": "++",
+              "argument": {
+                "type": "Identifier",
+                "name": "i"
+              },
+              "prefix": false
+            },
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "star"
+                      },
+                      "init": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "stars"
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "create"
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "BinaryExpression",
+                            "operator": "*",
+                            "left": {
+                              "type": "Identifier",
+                              "name": "i"
+                            },
+                            "right": {
+                              "type": "Literal",
+                              "value": 70,
+                              "raw": "70"
+                            }
+                          },
+                          {
+                            "type": "Literal",
+                            "value": 0,
+                            "raw": "0"
+                          },
+                          {
+                            "type": "Literal",
+                            "value": "star",
+                            "raw": "'star'"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "kind": "var"
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "star"
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "body"
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "gravity"
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "y"
+                      }
+                    },
+                    "right": {
+                      "type": "Literal",
+                      "value": 300,
+                      "raw": "300"
+                    }
+                  }
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "star"
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "body"
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "bounce"
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "y"
+                      }
+                    },
+                    "right": {
+                      "type": "BinaryExpression",
+                      "operator": "+",
+                      "left": {
+                        "type": "Literal",
+                        "value": 0.7,
+                        "raw": "0.7"
+                      },
+                      "right": {
+                        "type": "BinaryExpression",
+                        "operator": "*",
+                        "left": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "Math"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "random"
+                            }
+                          },
+                          "arguments": []
+                        },
+                        "right": {
+                          "type": "Literal",
+                          "value": 0.2,
+                          "raw": "0.2"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "Identifier",
+                "name": "scoreText"
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "game"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "add"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "text"
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": 16,
+                    "raw": "16"
+                  },
+                  {
+                    "type": "Literal",
+                    "value": 16,
+                    "raw": "16"
+                  },
+                  {
+                    "type": "Literal",
+                    "value": "score: 0",
+                    "raw": "'score: 0'"
+                  },
+                  {
+                    "type": "ObjectExpression",
+                    "properties": [
+                      {
+                        "type": "Property",
+                        "key": {
+                          "type": "Identifier",
+                          "name": "fontSize"
+                        },
+                        "computed": false,
+                        "value": {
+                          "type": "Literal",
+                          "value": "32px",
+                          "raw": "'32px'"
+                        },
+                        "kind": "init",
+                        "method": false,
+                        "shorthand": false
+                      },
+                      {
+                        "type": "Property",
+                        "key": {
+                          "type": "Identifier",
+                          "name": "fill"
+                        },
+                        "computed": false,
+                        "value": {
+                          "type": "Literal",
+                          "value": "#000",
+                          "raw": "'#000'"
+                        },
+                        "kind": "init",
+                        "method": false,
+                        "shorthand": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "Identifier",
+                "name": "cursors"
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "game"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "input"
+                      }
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "keyboard"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createCursorKeys"
+                  }
+                },
+                "arguments": []
+              }
+            }
+          }
+        ]
+      },
+      "generator": false,
+      "expression": false
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "update"
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "game"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "physics"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "arcade"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "collide"
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Identifier",
+                  "name": "player"
+                },
+                {
+                  "type": "Identifier",
+                  "name": "platforms"
+                }
+              ]
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "game"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "physics"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "arcade"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "collide"
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Identifier",
+                  "name": "stars"
+                },
+                {
+                  "type": "Identifier",
+                  "name": "platforms"
+                }
+              ]
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "game"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "physics"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "arcade"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "overlap"
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Identifier",
+                  "name": "player"
+                },
+                {
+                  "type": "Identifier",
+                  "name": "stars"
+                },
+                {
+                  "type": "Identifier",
+                  "name": "collectStar"
+                },
+                {
+                  "type": "Literal",
+                  "value": null,
+                  "raw": "null"
+                },
+                {
+                  "type": "ThisExpression"
+                }
+              ]
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "player"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "body"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "velocity"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "x"
+                }
+              },
+              "right": {
+                "type": "Literal",
+                "value": 0,
+                "raw": "0"
+              }
+            }
+          },
+          {
+            "type": "IfStatement",
+            "test": {
+              "type": "MemberExpression",
+              "computed": false,
+              "object": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "cursors"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "left"
+                }
+              },
+              "property": {
+                "type": "Identifier",
+                "name": "isDown"
+              }
+            },
+            "consequent": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "player"
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "body"
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "velocity"
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "x"
+                      }
+                    },
+                    "right": {
+                      "type": "UnaryExpression",
+                      "operator": "-",
+                      "argument": {
+                        "type": "Literal",
+                        "value": 150,
+                        "raw": "150"
+                      },
+                      "prefix": true
+                    }
+                  }
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "player"
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "animations"
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "play"
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "left",
+                        "raw": "'left'"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "alternate": {
+              "type": "IfStatement",
+              "test": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "cursors"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "right"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "isDown"
+                }
+              },
+              "consequent": {
+                "type": "BlockStatement",
+                "body": [
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "AssignmentExpression",
+                      "operator": "=",
+                      "left": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "player"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "body"
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "velocity"
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "x"
+                        }
+                      },
+                      "right": {
+                        "type": "Literal",
+                        "value": 150,
+                        "raw": "150"
+                      }
+                    }
+                  },
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "player"
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "animations"
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "play"
+                        }
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": "right",
+                          "raw": "'right'"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "alternate": {
+                "type": "BlockStatement",
+                "body": [
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "player"
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "animations"
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "stop"
+                        }
+                      },
+                      "arguments": []
+                    }
+                  },
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "AssignmentExpression",
+                      "operator": "=",
+                      "left": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "player"
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "frame"
+                        }
+                      },
+                      "right": {
+                        "type": "Literal",
+                        "value": 4,
+                        "raw": "4"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "IfStatement",
+            "test": {
+              "type": "LogicalExpression",
+              "operator": "&&",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "cursors"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "up"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "isDown"
+                }
+              },
+              "right": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "player"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "body"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "touching"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "down"
+                }
+              }
+            },
+            "consequent": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "player"
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "body"
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "velocity"
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "y"
+                      }
+                    },
+                    "right": {
+                      "type": "UnaryExpression",
+                      "operator": "-",
+                      "argument": {
+                        "type": "Literal",
+                        "value": 350,
+                        "raw": "350"
+                      },
+                      "prefix": true
+                    }
+                  }
+                }
+              ]
+            },
+            "alternate": null
+          }
+        ]
+      },
+      "generator": false,
+      "expression": false
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "collectStar"
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "player"
+        },
+        {
+          "type": "Identifier",
+          "name": "star"
+        }
+      ],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "star"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "kill"
+                }
+              },
+              "arguments": []
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "+=",
+              "left": {
+                "type": "Identifier",
+                "name": "score"
+              },
+              "right": {
+                "type": "Literal",
+                "value": 10,
+                "raw": "10"
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "scoreText"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "text"
+                }
+              },
+              "right": {
+                "type": "BinaryExpression",
+                "operator": "+",
+                "left": {
+                  "type": "Literal",
+                  "value": "Score: ",
+                  "raw": "'Score: '"
+                },
+                "right": {
+                  "type": "Identifier",
+                  "name": "score"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "generator": false,
+      "expression": false
+    }
+  ],
+  "sourceType": "script"
+}

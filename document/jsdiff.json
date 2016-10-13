@@ -1,0 +1,1859 @@
+{
+  "body": {
+    "0": {
+      "expression": {
+        "callee": {
+          "object": {
+            "callee": {
+              "object": {
+                "callee": {
+                  "object": {
+                    "type": [
+                      "Identifier",
+                      "CallExpression"
+                    ],
+                    "name": [
+                      "angular",
+                      0,
+                      0
+                    ],
+                    "callee": [
+                      {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "angular"
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "module"
+                        }
+                      }
+                    ],
+                    "arguments": [
+                      [
+                        {
+                          "type": "Literal",
+                          "value": "BookStoreApp",
+                          "raw": "'BookStoreApp'"
+                        },
+                        {
+                          "type": "ArrayExpression",
+                          "elements": [
+                            {
+                              "type": "Literal",
+                              "value": "ionic",
+                              "raw": "'ionic'"
+                            },
+                            {
+                              "type": "Literal",
+                              "value": "BookStoreApp.controllers",
+                              "raw": "'BookStoreApp.controllers'"
+                            },
+                            {
+                              "type": "Literal",
+                              "value": "BookStoreApp.factory",
+                              "raw": "'BookStoreApp.factory'"
+                            }
+                          ]
+                        }
+                      ]
+                    ]
+                  },
+                  "property": {
+                    "name": [
+                      "module",
+                      "run"
+                    ]
+                  }
+                },
+                "arguments": {
+                  "0": {
+                    "type": [
+                      "Literal",
+                      "FunctionExpression"
+                    ],
+                    "value": [
+                      "starter",
+                      0,
+                      0
+                    ],
+                    "raw": [
+                      "'starter'",
+                      0,
+                      0
+                    ],
+                    "id": [
+                      null
+                    ],
+                    "params": [
+                      [
+                        {
+                          "type": "Identifier",
+                          "name": "$ionicPlatform"
+                        }
+                      ]
+                    ],
+                    "defaults": [
+                      []
+                    ],
+                    "body": [
+                      {
+                        "type": "BlockStatement",
+                        "body": [
+                          {
+                            "type": "ExpressionStatement",
+                            "expression": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "$ionicPlatform"
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "ready"
+                                }
+                              },
+                              "arguments": [
+                                {
+                                  "type": "FunctionExpression",
+                                  "id": null,
+                                  "params": [],
+                                  "defaults": [],
+                                  "body": {
+                                    "type": "BlockStatement",
+                                    "body": [
+                                      {
+                                        "type": "IfStatement",
+                                        "test": {
+                                          "type": "LogicalExpression",
+                                          "operator": "&&",
+                                          "left": {
+                                            "type": "MemberExpression",
+                                            "computed": false,
+                                            "object": {
+                                              "type": "Identifier",
+                                              "name": "window"
+                                            },
+                                            "property": {
+                                              "type": "Identifier",
+                                              "name": "cordova"
+                                            }
+                                          },
+                                          "right": {
+                                            "type": "MemberExpression",
+                                            "computed": false,
+                                            "object": {
+                                              "type": "MemberExpression",
+                                              "computed": false,
+                                              "object": {
+                                                "type": "MemberExpression",
+                                                "computed": false,
+                                                "object": {
+                                                  "type": "Identifier",
+                                                  "name": "window"
+                                                },
+                                                "property": {
+                                                  "type": "Identifier",
+                                                  "name": "cordova"
+                                                }
+                                              },
+                                              "property": {
+                                                "type": "Identifier",
+                                                "name": "plugins"
+                                              }
+                                            },
+                                            "property": {
+                                              "type": "Identifier",
+                                              "name": "Keyboard"
+                                            }
+                                          }
+                                        },
+                                        "consequent": {
+                                          "type": "BlockStatement",
+                                          "body": [
+                                            {
+                                              "type": "ExpressionStatement",
+                                              "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                  "type": "MemberExpression",
+                                                  "computed": false,
+                                                  "object": {
+                                                    "type": "MemberExpression",
+                                                    "computed": false,
+                                                    "object": {
+                                                      "type": "MemberExpression",
+                                                      "computed": false,
+                                                      "object": {
+                                                        "type": "Identifier",
+                                                        "name": "cordova"
+                                                      },
+                                                      "property": {
+                                                        "type": "Identifier",
+                                                        "name": "plugins"
+                                                      }
+                                                    },
+                                                    "property": {
+                                                      "type": "Identifier",
+                                                      "name": "Keyboard"
+                                                    }
+                                                  },
+                                                  "property": {
+                                                    "type": "Identifier",
+                                                    "name": "hideKeyboardAccessoryBar"
+                                                  }
+                                                },
+                                                "arguments": [
+                                                  {
+                                                    "type": "Literal",
+                                                    "value": true,
+                                                    "raw": "true"
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        "alternate": null
+                                      },
+                                      {
+                                        "type": "IfStatement",
+                                        "test": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "Identifier",
+                                            "name": "window"
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "StatusBar"
+                                          }
+                                        },
+                                        "consequent": {
+                                          "type": "BlockStatement",
+                                          "body": [
+                                            {
+                                              "type": "ExpressionStatement",
+                                              "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                  "type": "MemberExpression",
+                                                  "computed": false,
+                                                  "object": {
+                                                    "type": "Identifier",
+                                                    "name": "StatusBar"
+                                                  },
+                                                  "property": {
+                                                    "type": "Identifier",
+                                                    "name": "styleDefault"
+                                                  }
+                                                },
+                                                "arguments": []
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        "alternate": null
+                                      }
+                                    ]
+                                  },
+                                  "generator": false,
+                                  "expression": false
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "generator": [
+                      false
+                    ],
+                    "expression": [
+                      false
+                    ]
+                  },
+                  "_t": "a",
+                  "_1": [
+                    {
+                      "type": "ArrayExpression",
+                      "elements": [
+                        {
+                          "type": "Literal",
+                          "value": "ionic",
+                          "raw": "'ionic'"
+                        },
+                        {
+                          "type": "Literal",
+                          "value": "starter.controllers",
+                          "raw": "'starter.controllers'"
+                        }
+                      ]
+                    },
+                    0,
+                    0
+                  ]
+                }
+              }
+            },
+            "arguments": {
+              "0": {
+                "type": [
+                  "FunctionExpression",
+                  "ArrayExpression"
+                ],
+                "id": [
+                  null,
+                  0,
+                  0
+                ],
+                "params": [
+                  [
+                    {
+                      "type": "Identifier",
+                      "name": "$ionicPlatform"
+                    }
+                  ],
+                  0,
+                  0
+                ],
+                "defaults": [
+                  [],
+                  0,
+                  0
+                ],
+                "body": [
+                  {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ExpressionStatement",
+                        "expression": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "$ionicPlatform"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "ready"
+                            }
+                          },
+                          "arguments": [
+                            {
+                              "type": "FunctionExpression",
+                              "id": null,
+                              "params": [],
+                              "defaults": [],
+                              "body": {
+                                "type": "BlockStatement",
+                                "body": [
+                                  {
+                                    "type": "IfStatement",
+                                    "test": {
+                                      "type": "LogicalExpression",
+                                      "operator": "&&",
+                                      "left": {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                          "type": "Identifier",
+                                          "name": "window"
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "cordova"
+                                        }
+                                      },
+                                      "right": {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "MemberExpression",
+                                            "computed": false,
+                                            "object": {
+                                              "type": "Identifier",
+                                              "name": "window"
+                                            },
+                                            "property": {
+                                              "type": "Identifier",
+                                              "name": "cordova"
+                                            }
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "plugins"
+                                          }
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "Keyboard"
+                                        }
+                                      }
+                                    },
+                                    "consequent": {
+                                      "type": "BlockStatement",
+                                      "body": [
+                                        {
+                                          "type": "ExpressionStatement",
+                                          "expression": {
+                                            "type": "CallExpression",
+                                            "callee": {
+                                              "type": "MemberExpression",
+                                              "computed": false,
+                                              "object": {
+                                                "type": "MemberExpression",
+                                                "computed": false,
+                                                "object": {
+                                                  "type": "MemberExpression",
+                                                  "computed": false,
+                                                  "object": {
+                                                    "type": "Identifier",
+                                                    "name": "cordova"
+                                                  },
+                                                  "property": {
+                                                    "type": "Identifier",
+                                                    "name": "plugins"
+                                                  }
+                                                },
+                                                "property": {
+                                                  "type": "Identifier",
+                                                  "name": "Keyboard"
+                                                }
+                                              },
+                                              "property": {
+                                                "type": "Identifier",
+                                                "name": "hideKeyboardAccessoryBar"
+                                              }
+                                            },
+                                            "arguments": [
+                                              {
+                                                "type": "Literal",
+                                                "value": true,
+                                                "raw": "true"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "type": "ExpressionStatement",
+                                          "expression": {
+                                            "type": "CallExpression",
+                                            "callee": {
+                                              "type": "MemberExpression",
+                                              "computed": false,
+                                              "object": {
+                                                "type": "MemberExpression",
+                                                "computed": false,
+                                                "object": {
+                                                  "type": "MemberExpression",
+                                                  "computed": false,
+                                                  "object": {
+                                                    "type": "Identifier",
+                                                    "name": "cordova"
+                                                  },
+                                                  "property": {
+                                                    "type": "Identifier",
+                                                    "name": "plugins"
+                                                  }
+                                                },
+                                                "property": {
+                                                  "type": "Identifier",
+                                                  "name": "Keyboard"
+                                                }
+                                              },
+                                              "property": {
+                                                "type": "Identifier",
+                                                "name": "disableScroll"
+                                              }
+                                            },
+                                            "arguments": [
+                                              {
+                                                "type": "Literal",
+                                                "value": true,
+                                                "raw": "true"
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    "alternate": null
+                                  },
+                                  {
+                                    "type": "IfStatement",
+                                    "test": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "Identifier",
+                                        "name": "window"
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "StatusBar"
+                                      }
+                                    },
+                                    "consequent": {
+                                      "type": "BlockStatement",
+                                      "body": [
+                                        {
+                                          "type": "ExpressionStatement",
+                                          "expression": {
+                                            "type": "CallExpression",
+                                            "callee": {
+                                              "type": "MemberExpression",
+                                              "computed": false,
+                                              "object": {
+                                                "type": "Identifier",
+                                                "name": "StatusBar"
+                                              },
+                                              "property": {
+                                                "type": "Identifier",
+                                                "name": "styleDefault"
+                                              }
+                                            },
+                                            "arguments": []
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    "alternate": null
+                                  }
+                                ]
+                              },
+                              "generator": false,
+                              "expression": false
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  0,
+                  0
+                ],
+                "generator": [
+                  false,
+                  0,
+                  0
+                ],
+                "expression": [
+                  false,
+                  0,
+                  0
+                ],
+                "elements": [
+                  [
+                    {
+                      "type": "Literal",
+                      "value": "$rootScope",
+                      "raw": "'$rootScope'"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": "AuthFactory",
+                      "raw": "'AuthFactory'"
+                    },
+                    {
+                      "type": "FunctionExpression",
+                      "id": null,
+                      "params": [
+                        {
+                          "type": "Identifier",
+                          "name": "$rootScope"
+                        },
+                        {
+                          "type": "Identifier",
+                          "name": "AuthFactory"
+                        }
+                      ],
+                      "defaults": [],
+                      "body": {
+                        "type": "BlockStatement",
+                        "body": [
+                          {
+                            "type": "ExpressionStatement",
+                            "expression": {
+                              "type": "AssignmentExpression",
+                              "operator": "=",
+                              "left": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "$rootScope"
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "isAuthenticated"
+                                }
+                              },
+                              "right": {
+                                "type": "CallExpression",
+                                "callee": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "Identifier",
+                                    "name": "AuthFactory"
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "isLoggedIn"
+                                  }
+                                },
+                                "arguments": []
+                              }
+                            }
+                          },
+                          {
+                            "type": "ExpressionStatement",
+                            "expression": {
+                              "type": "AssignmentExpression",
+                              "operator": "=",
+                              "left": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "$rootScope"
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "getNumber"
+                                }
+                              },
+                              "right": {
+                                "type": "FunctionExpression",
+                                "id": null,
+                                "params": [
+                                  {
+                                    "type": "Identifier",
+                                    "name": "num"
+                                  }
+                                ],
+                                "defaults": [],
+                                "body": {
+                                  "type": "BlockStatement",
+                                  "body": [
+                                    {
+                                      "type": "ReturnStatement",
+                                      "argument": {
+                                        "type": "NewExpression",
+                                        "callee": {
+                                          "type": "Identifier",
+                                          "name": "Array"
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Identifier",
+                                            "name": "num"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                },
+                                "generator": false,
+                                "expression": false
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "generator": false,
+                      "expression": false
+                    }
+                  ]
+                ]
+              },
+              "_t": "a"
+            }
+          }
+        },
+        "arguments": {
+          "0": {
+            "type": [
+              "FunctionExpression",
+              "ArrayExpression"
+            ],
+            "id": [
+              null,
+              0,
+              0
+            ],
+            "params": [
+              [
+                {
+                  "type": "Identifier",
+                  "name": "$stateProvider"
+                },
+                {
+                  "type": "Identifier",
+                  "name": "$urlRouterProvider"
+                }
+              ],
+              0,
+              0
+            ],
+            "defaults": [
+              [],
+              0,
+              0
+            ],
+            "body": [
+              {
+                "type": "BlockStatement",
+                "body": [
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                          "type": "Identifier",
+                                          "name": "$stateProvider"
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "state"
+                                        }
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "Literal",
+                                          "value": "app",
+                                          "raw": "'app'"
+                                        },
+                                        {
+                                          "type": "ObjectExpression",
+                                          "properties": [
+                                            {
+                                              "type": "Property",
+                                              "key": {
+                                                "type": "Identifier",
+                                                "name": "url"
+                                              },
+                                              "computed": false,
+                                              "value": {
+                                                "type": "Literal",
+                                                "value": "/app",
+                                                "raw": "'/app'"
+                                              },
+                                              "kind": "init",
+                                              "method": false,
+                                              "shorthand": false
+                                            },
+                                            {
+                                              "type": "Property",
+                                              "key": {
+                                                "type": "Identifier",
+                                                "name": "abstract"
+                                              },
+                                              "computed": false,
+                                              "value": {
+                                                "type": "Literal",
+                                                "value": true,
+                                                "raw": "true"
+                                              },
+                                              "kind": "init",
+                                              "method": false,
+                                              "shorthand": false
+                                            },
+                                            {
+                                              "type": "Property",
+                                              "key": {
+                                                "type": "Identifier",
+                                                "name": "templateUrl"
+                                              },
+                                              "computed": false,
+                                              "value": {
+                                                "type": "Literal",
+                                                "value": "templates/menu.html",
+                                                "raw": "'templates/menu.html'"
+                                              },
+                                              "kind": "init",
+                                              "method": false,
+                                              "shorthand": false
+                                            },
+                                            {
+                                              "type": "Property",
+                                              "key": {
+                                                "type": "Identifier",
+                                                "name": "controller"
+                                              },
+                                              "computed": false,
+                                              "value": {
+                                                "type": "Literal",
+                                                "value": "AppCtrl",
+                                                "raw": "'AppCtrl'"
+                                              },
+                                              "kind": "init",
+                                              "method": false,
+                                              "shorthand": false
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "state"
+                                    }
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": "app.search",
+                                      "raw": "'app.search'"
+                                    },
+                                    {
+                                      "type": "ObjectExpression",
+                                      "properties": [
+                                        {
+                                          "type": "Property",
+                                          "key": {
+                                            "type": "Identifier",
+                                            "name": "url"
+                                          },
+                                          "computed": false,
+                                          "value": {
+                                            "type": "Literal",
+                                            "value": "/search",
+                                            "raw": "'/search'"
+                                          },
+                                          "kind": "init",
+                                          "method": false,
+                                          "shorthand": false
+                                        },
+                                        {
+                                          "type": "Property",
+                                          "key": {
+                                            "type": "Identifier",
+                                            "name": "views"
+                                          },
+                                          "computed": false,
+                                          "value": {
+                                            "type": "ObjectExpression",
+                                            "properties": [
+                                              {
+                                                "type": "Property",
+                                                "key": {
+                                                  "type": "Literal",
+                                                  "value": "menuContent",
+                                                  "raw": "'menuContent'"
+                                                },
+                                                "computed": false,
+                                                "value": {
+                                                  "type": "ObjectExpression",
+                                                  "properties": [
+                                                    {
+                                                      "type": "Property",
+                                                      "key": {
+                                                        "type": "Identifier",
+                                                        "name": "templateUrl"
+                                                      },
+                                                      "computed": false,
+                                                      "value": {
+                                                        "type": "Literal",
+                                                        "value": "templates/search.html",
+                                                        "raw": "'templates/search.html'"
+                                                      },
+                                                      "kind": "init",
+                                                      "method": false,
+                                                      "shorthand": false
+                                                    }
+                                                  ]
+                                                },
+                                                "kind": "init",
+                                                "method": false,
+                                                "shorthand": false
+                                              }
+                                            ]
+                                          },
+                                          "kind": "init",
+                                          "method": false,
+                                          "shorthand": false
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "state"
+                                }
+                              },
+                              "arguments": [
+                                {
+                                  "type": "Literal",
+                                  "value": "app.browse",
+                                  "raw": "'app.browse'"
+                                },
+                                {
+                                  "type": "ObjectExpression",
+                                  "properties": [
+                                    {
+                                      "type": "Property",
+                                      "key": {
+                                        "type": "Identifier",
+                                        "name": "url"
+                                      },
+                                      "computed": false,
+                                      "value": {
+                                        "type": "Literal",
+                                        "value": "/browse",
+                                        "raw": "'/browse'"
+                                      },
+                                      "kind": "init",
+                                      "method": false,
+                                      "shorthand": false
+                                    },
+                                    {
+                                      "type": "Property",
+                                      "key": {
+                                        "type": "Identifier",
+                                        "name": "views"
+                                      },
+                                      "computed": false,
+                                      "value": {
+                                        "type": "ObjectExpression",
+                                        "properties": [
+                                          {
+                                            "type": "Property",
+                                            "key": {
+                                              "type": "Literal",
+                                              "value": "menuContent",
+                                              "raw": "'menuContent'"
+                                            },
+                                            "computed": false,
+                                            "value": {
+                                              "type": "ObjectExpression",
+                                              "properties": [
+                                                {
+                                                  "type": "Property",
+                                                  "key": {
+                                                    "type": "Identifier",
+                                                    "name": "templateUrl"
+                                                  },
+                                                  "computed": false,
+                                                  "value": {
+                                                    "type": "Literal",
+                                                    "value": "templates/browse.html",
+                                                    "raw": "'templates/browse.html'"
+                                                  },
+                                                  "kind": "init",
+                                                  "method": false,
+                                                  "shorthand": false
+                                                }
+                                              ]
+                                            },
+                                            "kind": "init",
+                                            "method": false,
+                                            "shorthand": false
+                                          }
+                                        ]
+                                      },
+                                      "kind": "init",
+                                      "method": false,
+                                      "shorthand": false
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "state"
+                            }
+                          },
+                          "arguments": [
+                            {
+                              "type": "Literal",
+                              "value": "app.playlists",
+                              "raw": "'app.playlists'"
+                            },
+                            {
+                              "type": "ObjectExpression",
+                              "properties": [
+                                {
+                                  "type": "Property",
+                                  "key": {
+                                    "type": "Identifier",
+                                    "name": "url"
+                                  },
+                                  "computed": false,
+                                  "value": {
+                                    "type": "Literal",
+                                    "value": "/playlists",
+                                    "raw": "'/playlists'"
+                                  },
+                                  "kind": "init",
+                                  "method": false,
+                                  "shorthand": false
+                                },
+                                {
+                                  "type": "Property",
+                                  "key": {
+                                    "type": "Identifier",
+                                    "name": "views"
+                                  },
+                                  "computed": false,
+                                  "value": {
+                                    "type": "ObjectExpression",
+                                    "properties": [
+                                      {
+                                        "type": "Property",
+                                        "key": {
+                                          "type": "Literal",
+                                          "value": "menuContent",
+                                          "raw": "'menuContent'"
+                                        },
+                                        "computed": false,
+                                        "value": {
+                                          "type": "ObjectExpression",
+                                          "properties": [
+                                            {
+                                              "type": "Property",
+                                              "key": {
+                                                "type": "Identifier",
+                                                "name": "templateUrl"
+                                              },
+                                              "computed": false,
+                                              "value": {
+                                                "type": "Literal",
+                                                "value": "templates/playlists.html",
+                                                "raw": "'templates/playlists.html'"
+                                              },
+                                              "kind": "init",
+                                              "method": false,
+                                              "shorthand": false
+                                            },
+                                            {
+                                              "type": "Property",
+                                              "key": {
+                                                "type": "Identifier",
+                                                "name": "controller"
+                                              },
+                                              "computed": false,
+                                              "value": {
+                                                "type": "Literal",
+                                                "value": "PlaylistsCtrl",
+                                                "raw": "'PlaylistsCtrl'"
+                                              },
+                                              "kind": "init",
+                                              "method": false,
+                                              "shorthand": false
+                                            }
+                                          ]
+                                        },
+                                        "kind": "init",
+                                        "method": false,
+                                        "shorthand": false
+                                      }
+                                    ]
+                                  },
+                                  "kind": "init",
+                                  "method": false,
+                                  "shorthand": false
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "state"
+                        }
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": "app.single",
+                          "raw": "'app.single'"
+                        },
+                        {
+                          "type": "ObjectExpression",
+                          "properties": [
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "url"
+                              },
+                              "computed": false,
+                              "value": {
+                                "type": "Literal",
+                                "value": "/playlists/:playlistId",
+                                "raw": "'/playlists/:playlistId'"
+                              },
+                              "kind": "init",
+                              "method": false,
+                              "shorthand": false
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "views"
+                              },
+                              "computed": false,
+                              "value": {
+                                "type": "ObjectExpression",
+                                "properties": [
+                                  {
+                                    "type": "Property",
+                                    "key": {
+                                      "type": "Literal",
+                                      "value": "menuContent",
+                                      "raw": "'menuContent'"
+                                    },
+                                    "computed": false,
+                                    "value": {
+                                      "type": "ObjectExpression",
+                                      "properties": [
+                                        {
+                                          "type": "Property",
+                                          "key": {
+                                            "type": "Identifier",
+                                            "name": "templateUrl"
+                                          },
+                                          "computed": false,
+                                          "value": {
+                                            "type": "Literal",
+                                            "value": "templates/playlist.html",
+                                            "raw": "'templates/playlist.html'"
+                                          },
+                                          "kind": "init",
+                                          "method": false,
+                                          "shorthand": false
+                                        },
+                                        {
+                                          "type": "Property",
+                                          "key": {
+                                            "type": "Identifier",
+                                            "name": "controller"
+                                          },
+                                          "computed": false,
+                                          "value": {
+                                            "type": "Literal",
+                                            "value": "PlaylistCtrl",
+                                            "raw": "'PlaylistCtrl'"
+                                          },
+                                          "kind": "init",
+                                          "method": false,
+                                          "shorthand": false
+                                        }
+                                      ]
+                                    },
+                                    "kind": "init",
+                                    "method": false,
+                                    "shorthand": false
+                                  }
+                                ]
+                              },
+                              "kind": "init",
+                              "method": false,
+                              "shorthand": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "$urlRouterProvider"
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "otherwise"
+                        }
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": "/app/playlists",
+                          "raw": "'/app/playlists'"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              0,
+              0
+            ],
+            "generator": [
+              false,
+              0,
+              0
+            ],
+            "expression": [
+              false,
+              0,
+              0
+            ],
+            "elements": [
+              [
+                {
+                  "type": "Literal",
+                  "value": "$stateProvider",
+                  "raw": "'$stateProvider'"
+                },
+                {
+                  "type": "Literal",
+                  "value": "$urlRouterProvider",
+                  "raw": "'$urlRouterProvider'"
+                },
+                {
+                  "type": "Literal",
+                  "value": "$httpProvider",
+                  "raw": "'$httpProvider'"
+                },
+                {
+                  "type": "FunctionExpression",
+                  "id": null,
+                  "params": [
+                    {
+                      "type": "Identifier",
+                      "name": "$stateProvider"
+                    },
+                    {
+                      "type": "Identifier",
+                      "name": "$urlRouterProvider"
+                    },
+                    {
+                      "type": "Identifier",
+                      "name": "$httpProvider"
+                    }
+                  ],
+                  "defaults": [],
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ExpressionStatement",
+                        "expression": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "$httpProvider"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "interceptors"
+                              }
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "push"
+                            }
+                          },
+                          "arguments": [
+                            {
+                              "type": "Literal",
+                              "value": "TokenInterceptor",
+                              "raw": "'TokenInterceptor'"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "ExpressionStatement",
+                        "expression": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                          "type": "CallExpression",
+                                          "callee": {
+                                            "type": "MemberExpression",
+                                            "computed": false,
+                                            "object": {
+                                              "type": "Identifier",
+                                              "name": "$stateProvider"
+                                            },
+                                            "property": {
+                                              "type": "Identifier",
+                                              "name": "state"
+                                            }
+                                          },
+                                          "arguments": [
+                                            {
+                                              "type": "Literal",
+                                              "value": "app",
+                                              "raw": "'app'"
+                                            },
+                                            {
+                                              "type": "ObjectExpression",
+                                              "properties": [
+                                                {
+                                                  "type": "Property",
+                                                  "key": {
+                                                    "type": "Identifier",
+                                                    "name": "url"
+                                                  },
+                                                  "computed": false,
+                                                  "value": {
+                                                    "type": "Literal",
+                                                    "value": "/app",
+                                                    "raw": "\"/app\""
+                                                  },
+                                                  "kind": "init",
+                                                  "method": false,
+                                                  "shorthand": false
+                                                },
+                                                {
+                                                  "type": "Property",
+                                                  "key": {
+                                                    "type": "Identifier",
+                                                    "name": "abstract"
+                                                  },
+                                                  "computed": false,
+                                                  "value": {
+                                                    "type": "Literal",
+                                                    "value": true,
+                                                    "raw": "true"
+                                                  },
+                                                  "kind": "init",
+                                                  "method": false,
+                                                  "shorthand": false
+                                                },
+                                                {
+                                                  "type": "Property",
+                                                  "key": {
+                                                    "type": "Identifier",
+                                                    "name": "templateUrl"
+                                                  },
+                                                  "computed": false,
+                                                  "value": {
+                                                    "type": "Literal",
+                                                    "value": "templates/menu.html",
+                                                    "raw": "\"templates/menu.html\""
+                                                  },
+                                                  "kind": "init",
+                                                  "method": false,
+                                                  "shorthand": false
+                                                },
+                                                {
+                                                  "type": "Property",
+                                                  "key": {
+                                                    "type": "Identifier",
+                                                    "name": "controller"
+                                                  },
+                                                  "computed": false,
+                                                  "value": {
+                                                    "type": "Literal",
+                                                    "value": "AppCtrl",
+                                                    "raw": "'AppCtrl'"
+                                                  },
+                                                  "kind": "init",
+                                                  "method": false,
+                                                  "shorthand": false
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "state"
+                                        }
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "Literal",
+                                          "value": "app.browse",
+                                          "raw": "'app.browse'"
+                                        },
+                                        {
+                                          "type": "ObjectExpression",
+                                          "properties": [
+                                            {
+                                              "type": "Property",
+                                              "key": {
+                                                "type": "Identifier",
+                                                "name": "url"
+                                              },
+                                              "computed": false,
+                                              "value": {
+                                                "type": "Literal",
+                                                "value": "/browse",
+                                                "raw": "\"/browse\""
+                                              },
+                                              "kind": "init",
+                                              "method": false,
+                                              "shorthand": false
+                                            },
+                                            {
+                                              "type": "Property",
+                                              "key": {
+                                                "type": "Identifier",
+                                                "name": "views"
+                                              },
+                                              "computed": false,
+                                              "value": {
+                                                "type": "ObjectExpression",
+                                                "properties": [
+                                                  {
+                                                    "type": "Property",
+                                                    "key": {
+                                                      "type": "Literal",
+                                                      "value": "menuContent",
+                                                      "raw": "'menuContent'"
+                                                    },
+                                                    "computed": false,
+                                                    "value": {
+                                                      "type": "ObjectExpression",
+                                                      "properties": [
+                                                        {
+                                                          "type": "Property",
+                                                          "key": {
+                                                            "type": "Identifier",
+                                                            "name": "templateUrl"
+                                                          },
+                                                          "computed": false,
+                                                          "value": {
+                                                            "type": "Literal",
+                                                            "value": "templates/browse.html",
+                                                            "raw": "\"templates/browse.html\""
+                                                          },
+                                                          "kind": "init",
+                                                          "method": false,
+                                                          "shorthand": false
+                                                        },
+                                                        {
+                                                          "type": "Property",
+                                                          "key": {
+                                                            "type": "Identifier",
+                                                            "name": "controller"
+                                                          },
+                                                          "computed": false,
+                                                          "value": {
+                                                            "type": "Literal",
+                                                            "value": "BrowseCtrl",
+                                                            "raw": "'BrowseCtrl'"
+                                                          },
+                                                          "kind": "init",
+                                                          "method": false,
+                                                          "shorthand": false
+                                                        }
+                                                      ]
+                                                    },
+                                                    "kind": "init",
+                                                    "method": false,
+                                                    "shorthand": false
+                                                  }
+                                                ]
+                                              },
+                                              "kind": "init",
+                                              "method": false,
+                                              "shorthand": false
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "state"
+                                    }
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": "app.book",
+                                      "raw": "'app.book'"
+                                    },
+                                    {
+                                      "type": "ObjectExpression",
+                                      "properties": [
+                                        {
+                                          "type": "Property",
+                                          "key": {
+                                            "type": "Identifier",
+                                            "name": "url"
+                                          },
+                                          "computed": false,
+                                          "value": {
+                                            "type": "Literal",
+                                            "value": "/book/:bookId",
+                                            "raw": "\"/book/:bookId\""
+                                          },
+                                          "kind": "init",
+                                          "method": false,
+                                          "shorthand": false
+                                        },
+                                        {
+                                          "type": "Property",
+                                          "key": {
+                                            "type": "Identifier",
+                                            "name": "views"
+                                          },
+                                          "computed": false,
+                                          "value": {
+                                            "type": "ObjectExpression",
+                                            "properties": [
+                                              {
+                                                "type": "Property",
+                                                "key": {
+                                                  "type": "Literal",
+                                                  "value": "menuContent",
+                                                  "raw": "'menuContent'"
+                                                },
+                                                "computed": false,
+                                                "value": {
+                                                  "type": "ObjectExpression",
+                                                  "properties": [
+                                                    {
+                                                      "type": "Property",
+                                                      "key": {
+                                                        "type": "Identifier",
+                                                        "name": "templateUrl"
+                                                      },
+                                                      "computed": false,
+                                                      "value": {
+                                                        "type": "Literal",
+                                                        "value": "templates/book.html",
+                                                        "raw": "\"templates/book.html\""
+                                                      },
+                                                      "kind": "init",
+                                                      "method": false,
+                                                      "shorthand": false
+                                                    },
+                                                    {
+                                                      "type": "Property",
+                                                      "key": {
+                                                        "type": "Identifier",
+                                                        "name": "controller"
+                                                      },
+                                                      "computed": false,
+                                                      "value": {
+                                                        "type": "Literal",
+                                                        "value": "BookCtrl",
+                                                        "raw": "'BookCtrl'"
+                                                      },
+                                                      "kind": "init",
+                                                      "method": false,
+                                                      "shorthand": false
+                                                    }
+                                                  ]
+                                                },
+                                                "kind": "init",
+                                                "method": false,
+                                                "shorthand": false
+                                              }
+                                            ]
+                                          },
+                                          "kind": "init",
+                                          "method": false,
+                                          "shorthand": false
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "state"
+                                }
+                              },
+                              "arguments": [
+                                {
+                                  "type": "Literal",
+                                  "value": "app.cart",
+                                  "raw": "'app.cart'"
+                                },
+                                {
+                                  "type": "ObjectExpression",
+                                  "properties": [
+                                    {
+                                      "type": "Property",
+                                      "key": {
+                                        "type": "Identifier",
+                                        "name": "url"
+                                      },
+                                      "computed": false,
+                                      "value": {
+                                        "type": "Literal",
+                                        "value": "/cart",
+                                        "raw": "\"/cart\""
+                                      },
+                                      "kind": "init",
+                                      "method": false,
+                                      "shorthand": false
+                                    },
+                                    {
+                                      "type": "Property",
+                                      "key": {
+                                        "type": "Identifier",
+                                        "name": "views"
+                                      },
+                                      "computed": false,
+                                      "value": {
+                                        "type": "ObjectExpression",
+                                        "properties": [
+                                          {
+                                            "type": "Property",
+                                            "key": {
+                                              "type": "Literal",
+                                              "value": "menuContent",
+                                              "raw": "'menuContent'"
+                                            },
+                                            "computed": false,
+                                            "value": {
+                                              "type": "ObjectExpression",
+                                              "properties": [
+                                                {
+                                                  "type": "Property",
+                                                  "key": {
+                                                    "type": "Identifier",
+                                                    "name": "templateUrl"
+                                                  },
+                                                  "computed": false,
+                                                  "value": {
+                                                    "type": "Literal",
+                                                    "value": "templates/cart.html",
+                                                    "raw": "\"templates/cart.html\""
+                                                  },
+                                                  "kind": "init",
+                                                  "method": false,
+                                                  "shorthand": false
+                                                },
+                                                {
+                                                  "type": "Property",
+                                                  "key": {
+                                                    "type": "Identifier",
+                                                    "name": "controller"
+                                                  },
+                                                  "computed": false,
+                                                  "value": {
+                                                    "type": "Literal",
+                                                    "value": "CartCtrl",
+                                                    "raw": "'CartCtrl'"
+                                                  },
+                                                  "kind": "init",
+                                                  "method": false,
+                                                  "shorthand": false
+                                                }
+                                              ]
+                                            },
+                                            "kind": "init",
+                                            "method": false,
+                                            "shorthand": false
+                                          }
+                                        ]
+                                      },
+                                      "kind": "init",
+                                      "method": false,
+                                      "shorthand": false
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "state"
+                            }
+                          },
+                          "arguments": [
+                            {
+                              "type": "Literal",
+                              "value": "app.purchases",
+                              "raw": "'app.purchases'"
+                            },
+                            {
+                              "type": "ObjectExpression",
+                              "properties": [
+                                {
+                                  "type": "Property",
+                                  "key": {
+                                    "type": "Identifier",
+                                    "name": "url"
+                                  },
+                                  "computed": false,
+                                  "value": {
+                                    "type": "Literal",
+                                    "value": "/purchases",
+                                    "raw": "\"/purchases\""
+                                  },
+                                  "kind": "init",
+                                  "method": false,
+                                  "shorthand": false
+                                },
+                                {
+                                  "type": "Property",
+                                  "key": {
+                                    "type": "Identifier",
+                                    "name": "views"
+                                  },
+                                  "computed": false,
+                                  "value": {
+                                    "type": "ObjectExpression",
+                                    "properties": [
+                                      {
+                                        "type": "Property",
+                                        "key": {
+                                          "type": "Literal",
+                                          "value": "menuContent",
+                                          "raw": "'menuContent'"
+                                        },
+                                        "computed": false,
+                                        "value": {
+                                          "type": "ObjectExpression",
+                                          "properties": [
+                                            {
+                                              "type": "Property",
+                                              "key": {
+                                                "type": "Identifier",
+                                                "name": "templateUrl"
+                                              },
+                                              "computed": false,
+                                              "value": {
+                                                "type": "Literal",
+                                                "value": "templates/purchases.html",
+                                                "raw": "\"templates/purchases.html\""
+                                              },
+                                              "kind": "init",
+                                              "method": false,
+                                              "shorthand": false
+                                            },
+                                            {
+                                              "type": "Property",
+                                              "key": {
+                                                "type": "Identifier",
+                                                "name": "controller"
+                                              },
+                                              "computed": false,
+                                              "value": {
+                                                "type": "Literal",
+                                                "value": "PurchasesCtrl",
+                                                "raw": "'PurchasesCtrl'"
+                                              },
+                                              "kind": "init",
+                                              "method": false,
+                                              "shorthand": false
+                                            }
+                                          ]
+                                        },
+                                        "kind": "init",
+                                        "method": false,
+                                        "shorthand": false
+                                      }
+                                    ]
+                                  },
+                                  "kind": "init",
+                                  "method": false,
+                                  "shorthand": false
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "ExpressionStatement",
+                        "expression": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "$urlRouterProvider"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "otherwise"
+                            }
+                          },
+                          "arguments": [
+                            {
+                              "type": "Literal",
+                              "value": "/app/browse",
+                              "raw": "'/app/browse'"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "generator": false,
+                  "expression": false
+                }
+              ]
+            ]
+          },
+          "_t": "a"
+        }
+      }
+    },
+    "_t": "a"
+  }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "type": "tag",
+    "name": "ion-view",
+    "attribs": {
+      "view-title": "Playlist"
+    },
+    "children": [
+      {
+        "type": "tag",
+        "name": "ion-content",
+        "children": [
+          {
+            "type": "tag",
+            "name": "h1",
+            "children": [
+              {
+                "data": "Playlist",
+                "type": "text"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

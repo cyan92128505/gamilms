@@ -1,0 +1,96 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Admin Panel</title>
+    <link href="styles/bootstrap.css" rel="stylesheet" />
+    <link href="styles/bootstrap-theme.css" rel="stylesheet" />
+    <link href="jsonedit/styles.css" rel="stylesheet" type="text/css" />
+    <link href="styles/codemirror.css" rel="stylesheet" />
+    <link href="styles/monokai.css" rel="stylesheet" />
+</head>
+
+<body ng-app="AdminApp">
+    <div class="container" ng-controller="adminCtrl">
+        <h1 class="text-center">{{app_title}}</h1>
+        <div class="text-center">
+            <div class="btn-group btn-group-lg" role="group">
+                <button class="btn btn-default" ng-repeat="model in models" ng-click="change_model(model)">{{model}}</button>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <h3>database:
+                    {{list_name}}</h3>
+            <div class="btn-group btn-group-lg" role="group">
+                <button class="btn btn-default" ng-click="add_model()">add item</button>
+                <button class="btn btn-default" ng-click="send_model()" ng-show="isAdd">send item</button>
+            </div>
+            <div ng-show="isAdd">
+                <div class="jsonView">
+                    <json child="addData" default-collapsed="false" type="object"></json>
+                </div>
+            </div>
+            <div class="jsonView">
+                <json child="jsonData" default-collapsed="false" type="object"></json>
+            </div>
+        </div>
+        <hr />
+        <button class="btn btn-default" ng-click="js2json()">JS2JSON</button>
+        <div class='row'>
+            <div class='col-lg-6'>
+                <textarea ui-codemirror ui-codemirror-opts="editorOptions" ng-model="jsdiff_input_a" cols="30"></textarea>
+            </div>
+            <div class='col-lg-6'>
+                <textarea ui-codemirror ui-codemirror-opts="editorOptions" ng-model="jsdiff_input_b" cols="30"></textarea>
+            </div>
+        </div>
+        <hr />
+        <div class="btn-group btn-group-lg" role="group">
+            <button class="btn btn-default" ng-click="geticons()">Get Icon</button>
+            <button class="btn btn-default" ng-click="turnicon = !turnicon">Show icon</button>
+        </div>
+        <div class="bs-glyphicons" ng-show="turnicon">
+            <ul class="bs-glyphicons-list">
+                <li ng-repeat="icon in icons">
+                    <img class="glyphicon glyphicon-asterisk" aria-hidden="true" ng-src="{{'<%= project_name %>\/images\/badges\/'+icon}}" width="32px" height="32px" />
+                    <span class="glyphicon-class">{{icon}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="bs-glyphicons">
+            <ul class="bs-glyphicons-list">
+                <% for(var i = 11235728; i < 11235768; i++) {%>
+                    <li>
+                        <img class="glyphicon glyphicon-asterisk" aria-hidden="true" src="https://sdl-stickershop.line.naver.jp/products/0/0/1/1277197/android/stickers/<%= i %>.png" width="64px" height="64px"/>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var project_name = '<%= project_name %>';
+    </script>
+    <script src="jsonedit/jquery.min.js"></script>
+    <script src="jsonedit/jquery-ui.min.js"></script>
+    <script src="javascript/lib/codemirror.js"></script>
+    <!-- angular part -->
+    <script src="javascript/lib/angular.min.js"></script>
+    <script src="javascript/lib/ui-bootstrap-tpls-1.2.1.js"></script>
+    <script src="javascript/lib/ui-codemirror-css.js"></script>
+    <script src="javascript/lib/ui-codemirror-javascript.js"></script>
+    <script src="javascript/lib/ui-codemirror-sublime.js"></script>
+    <script src="javascript/lib/ui-codemirror-xml.js"></script>
+    <script src="javascript/lib/ui-codemirror.min.js"></script>
+    <script src="jsonedit/sortable.min.js"></script>
+    <script src="jsonedit/directives.js"></script>
+    <script src="javascript/services/gamiEvent.js"></script>
+    <script src="javascript/services/command.js"></script>
+    <script src="javascript/services/fileReader.js"></script>
+    <script src="javascript/services/snackbar.js"></script>
+    <script src="javascript/services/onboarding.js"></script>
+    <script src="javascript/controllers/admin.js"></script>
+</body>
+
+</html>

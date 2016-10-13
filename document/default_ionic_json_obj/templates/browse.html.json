@@ -1,0 +1,27 @@
+[
+  {
+    "type": "tag",
+    "name": "ion-view",
+    "attribs": {
+      "view-title": "Browse"
+    },
+    "children": [
+      {
+        "type": "tag",
+        "name": "ion-content",
+        "children": [
+          {
+            "type": "tag",
+            "name": "h1",
+            "children": [
+              {
+                "data": "Browse",
+                "type": "text"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

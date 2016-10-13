@@ -1,0 +1,10 @@
+<div class="profile_badge_animation">
+    <div class="bs-glyphicons container">
+        <ul class="bs-glyphicons-list">
+            <li ng-repeat="badge in badges" ng-style="badge.css" badge_name="{{badge.name}}" badge_info="{{badge.info}}" badge_url="{{badge.path}}" gami-unit ng-click="badge_info($index)">
+                <img class="glyphicon glyphicon-asterisk" aria-hidden="true" ng-src="{{badge.path}}" width="32px" height="32px"/>
+                <span class="glyphicon-class">{{badge.name}}</span>
+            </li>
+        </ul>
+    </div>
+</div>

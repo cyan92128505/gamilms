@@ -1,0 +1,105 @@
+<div class="profile_badge_animation">
+    <div class="row trip_container">
+        <div class="trip_box">
+            <div class="trip_progress">
+                <div class="trip_bar">
+                    <div ng-style="trip_bar" class="trip_bar__fill"></div>
+                </div>
+                <div ng-repeat="trip in trips track by $index" ng-class="trip.trip_css" class="trip_point" uib-dropdown dropdown-append-to-body ng-mouseover="status.isopen = (step_trigger?true:false)" is-open="status.isopen">
+                    <div class="trip_bullet" uib-dropdown-toggle id="trip"></div>
+                    <div ng-bind="trip.trip_name" class="trip_label" uib-dropdown-toggle id="trip"></div>
+                    <ul class="dropdown-menu trip_menu" uib-dropdown-menu role="menu" aria-labelledby="trip">
+                        <li role="menuitem" ng-repeat="trip_choice in trip.trip_choices track by $index">
+                            <a class="trip_term" href="" ng-bind="trip_choice" ng-click="step_control_trigger($parent.$index,$index)"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="editor_counter row">
+        <div class="col-lg-6">
+            <input type="file_name_text" ng-model="edit_file_name" ng-value="edit_file_name" ng-keypress="editfilename($event)" />
+        </div>
+        <div class="col-lg-6 funcbuttons_right">
+            <a href="" class="funcwhite" ng-disabled="saveover" ng-click="save_step()"><span class="icon-edit"></span><span class="">儲存進度</span></a>
+            <a href="" class="funcwhite" ng-disabled="nextover" ng-click="next_step()"><span class="icon-star"></span><span class="">課程完成</span></a>
+            <a href="" class="funcwhite" ng-click="clean_code()"><span class="icon-code"></span><span class="">整理程式碼</span></a>
+            <a href="" class="funcwhite" ng-click="restart_game()"><span class="icon-youtube-play"></span><span class="">測試程式</span></a>
+        </div>
+        <div class="col-lg-4 funcbuttons">
+            <a href="" class="funcwhite" ng-click="newfile()"><span class="icon-doc-new"></span></a>
+            <a href="" class="funcwhite" ng-disabled="saveover" ng-click="savefile()"><span class="icon-floppy"></span></a>
+            <a href="" class="funcwhite" ng-disabled="destroyover" ng-click="destroyfile()"><span class="icon-trash"></span></a>
+            <a href="" class="funcwhite" ng-disabled="buildover" ng-click="buildfile()"><span class="icon-terminal"></span> </a>
+        </div>
+    </div> -->
+
+    <div class="row">
+        <!-- <div class="col-lg-2 file_list_frame">
+            <ul class="file_list file_list_container">
+                <li>
+                    <div ng-include="file_tree"></div>
+                </li>
+            </ul>
+        </div> -->
+        <div class="col-lg-6">
+            <div class="hint_container">
+                <span class="trip_title" ng-bind="edit_file_name"></span>
+            </div>
+            <div class="hint_container_content">
+                <div class="trip_info">
+                    <div class="survey_progress">
+                        <div class="survey_progress_bar" ng-style="step_progress">
+                        </div>
+                    </div>
+                    <div ivo-markdown="step_contents">
+                    </div>
+                </div>
+                <!-- <ul class="pager trip_pager">
+                    <li class="previous"><a href="" ng-click="change_step_progress(-1)"><span>&larr;</span> 上一步</a></li>
+                    <li class="next"><a href="" ng-click="change_step_progress(1)">下一步 <span>&rarr;</span></a></li>
+                </ul> -->
+                <div ng-hide="hide_step_md_ctrl_btn">
+                    <p ng-hide="step_md_over" class="inner_tut_button_group">
+                        <span class="inner_tut_button_left" type="button" ng-click="change_step_progress(-1)"><span class="ani-lr">&larr; 上一步</span></span>
+                        <span class="inner_tut_button_right" type="button" ng-click="change_step_progress(1)"><span class="ani-lr">{{step_next_text}}&rarr;</span></span>
+                    </p>
+                    <p ng-show="step_md_over"  class="inner_tut_button" type="button" ng-click="surevy_modal_open()">填寫問卷</p>
+                </div>
+            </div>
+            <iframe class="game_container code-img" height="322px" width="100%" ng-src="{{url}}"></iframe>
+            <div class="test_game" ng-click="turn_on_test_game()" ng-show="test_game_on">
+                <span>測試遊戲</span>
+            </div>
+
+            <!-- <div class="phone_wrapper">
+            <div class="phone view_3">
+
+            </div>
+            </div> -->
+        </div>
+
+        <div class="col-lg-6">
+            <div class="view_container">
+                <div ng-show="load_mode" class="code-img text-center">
+                    <h1><span class="js-count" count-to="100" duration="1.5" count-from="0" content-before="Load System: " content-after="%" content-finish="歡迎使用">0</span></h1>
+                    <div class="content__wrapper">
+                        <div class="ellipses-container">
+                            <h2 class="greeting">GAMILMS</h2>
+                            <div class="ellipses ellipses__outer--thin">
+                                <div class="ellipses ellipses__orbit"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="code_mode" ng-click="turn_off_test_game()">
+                    <textarea ui-codemirror ui-codemirror-opts="editorOptions" ng-model="cmModel" cols="30"></textarea>
+                </div>
+                <div ng-show="view_mode" class="code-img text-center">
+                    <img ng-src="{{code_img}}" class="img-thumbnail"></img>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

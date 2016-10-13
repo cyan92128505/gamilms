@@ -1,0 +1,97 @@
+[
+  {
+    "type": "tag",
+    "name": "ion-view",
+    "attribs": {
+      "view-title": "Browse Books",
+      "hide-back-button": "true"
+    },
+    "children": [
+      {
+        "type": "tag",
+        "name": "ion-content",
+        "children": [
+          {
+            "type": "tag",
+            "name": "ion-list",
+            "children": [
+              {
+                "type": "tag",
+                "name": "div",
+                "attribs": {
+                  "ng-repeat": "book in books track by $index",
+                  "class": "row responsive-sm",
+                  "ng-if": "$index % 2 == 0"
+                },
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "ion-item",
+                    "attribs": {
+                      "class": "col-50",
+                      "ng-repeat": "i in [$index, $index + 1]",
+                      "ng-if": "books[i] != null",
+                      "ng-href": "#/app/book/{{::books[i]._id}}"
+                    },
+                    "children": [
+                      {
+                        "type": "tag",
+                        "name": "div",
+                        "attribs": {
+                          "class": "item-thumbnail-left"
+                        },
+                        "children": [
+                          {
+                            "type": "tag",
+                            "name": "img",
+                            "attribs": {
+                              "ng-src": "{{::book.image}}"
+                            }
+                          },
+                          {
+                            "type": "tag",
+                            "name": "h2",
+                            "children": [
+                              {
+                                "data": "{{::books[i].title}}",
+                                "type": "text"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "tag",
+                            "name": "p",
+                            "children": [
+                              {
+                                "data": "{{::books[i].short_description}}",
+                                "type": "text"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "tag",
+                            "name": "p",
+                            "children": [
+                              {
+                                "type": "tag",
+                                "name": "i",
+                                "attribs": {
+                                  "class": "icon ion-star",
+                                  "ng-repeat": "i in getNumber(books[i].rating) track by $index"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,36 @@
+{
+    "operator_event": [{
+        "path_name": "/profile",
+        "path_content": ""
+    }, {
+        "path_name": "/code",
+        "path_content": ""
+    }, {
+        "path_name": "/subject",
+        "path_content": ""
+    }, {
+        "path_name": "/video",
+        "path_content": ""
+    }, {
+        "path_name": "/leaderboard",
+        "path_content": ""
+    }, {
+        "path_name": "",
+        "path_content": ""
+    }, {
+        "path_name": "",
+        "path_content": ""
+    }, {
+        "path_name": "",
+        "path_content": ""
+    }, {
+        "path_name": "",
+        "path_content": ""
+    }, {
+        "path_name": "",
+        "path_content": ""
+    }, {
+        "path_name": "",
+        "path_content": ""
+    }]
+}

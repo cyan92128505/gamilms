@@ -1,0 +1,510 @@
+[{
+	"step_name": "教學開始",
+	"md_content": [
+		"####在這份教學中，將一步一步的做出簡單的平台遊戲，整個遊戲將由Phaser寫成\n",
+		"================================================================================",
+		"####透過Phaser的Game方法，新增game物件，在其中設置畫面尺寸、遊戲的網頁元素、素材程式名稱preload、建立用程式名稱create、遊戲用程式名稱update\n",
+		"####Phaser的Game方法能幫助我們建立遊戲本體\n",
+		"```\n",
+		"var game = new Phaser.Game(480, 320, Phaser.AUTO, '', {\n",
+		"\tpreload: preload,\n",
+		"\tcreate: create,\n",
+		"\tupdate: update\n",
+		"});\n",
+		"```\n",
+		"================================================================================",
+		"####在game物件之後加上素材程式preload、建立用程式create、遊戲用程式update\n",
+		"####preload程式幫助我們設置物件素材\n",
+		"####create程式設定物件的初始位置等相關屬性，準備遊戲物件與玩家互動\n",
+		"####遊戲是一連串的動畫繪製，一秒當中會繪製固定的畫面數，在update程式中會對每一個畫面，進行邏輯判斷\n",
+		"```\n",
+		"function preload() {}\n",
+		"function create() {}\n",
+		"function update() {}\n",
+		"```\n",
+		"================================================================================"
+	],
+	"quest": [{
+		"quest_title": "Phaser.Game能幫助我們建立什麼？",
+		"quest_terms": [
+			"場景物件",
+			"玩家物件",
+			"遊戲本體",
+			"非玩家物件"
+		],
+		"quest_answer": [
+			false,
+			false,
+			true,
+			false
+		],
+		"quest_limit": 1,
+		"quest_weight": 1
+	}]
+}, {
+	"step_name": "載入素材",
+	"md_content": [
+		"####在素材程式preload中建立圖示物件，並設置素材路徑\n",
+		"================================================================================",
+		"####game.load.image 是指呼叫game物件載入圖片\n",
+		"```\n",
+		"game.load.image('sky', 'lib/assets/sky.png');\n",
+		"game.load.image('ground', 'lib/assets/platform.png');\n",
+		"game.load.image('star', 'lib/assets/star.png');\n",
+		"```\n",
+		"================================================================================",
+		"####game.load.spritesheet 是指呼叫game物件載入動畫片段圖片\n",
+		"```\n",
+		"game.load.spritesheet('dude', 'lib/assets/dude.png', 32, 48);\n",
+		"```\n",
+		"================================================================================",
+		"####第一個變數是素材在素材庫中的名稱，第二個變數是素材檔案的位置\n",
+		"####32和48是指每一格的寬與高，並藉由該尺寸分割圖片，為動畫片段\n",
+		"```\n",
+		"game.load.spritesheet('dude', 'lib/assets/dude.png', 32, 48);\n",
+		"```\n",
+		"================================================================================"
+	],
+	"quest": [{
+		"quest_title": "透過game物件的什麼方法來建立圖示物件？",
+		"quest_terms": [
+			"add",
+			"create",
+			"load",
+			"input"
+		],
+		"quest_answer": [
+			false,
+			false,
+			true,
+			false
+		],
+		"quest_limit": 1,
+		"quest_weight": 1
+	}, {
+		"quest_title": "目前已學到哪兩種圖示物件？",
+		"quest_terms": [
+			"image",
+			"create",
+			"load",
+			"spritesheet"
+		],
+		"quest_answer": [
+			true,
+			false,
+			false,
+			true
+		],
+		"quest_limit": 1,
+		"quest_weight": 1
+	}]
+}, {
+	"step_name": "場景背景",
+	"md_content": [
+		"####在建立用程式create中，透過game物件的add方法，新增圖示物件，設置世界場景背景\n",
+		"####前兩個變數，是指場景中的位置，分別是指x與y，最後一個變數為素材名稱\n",
+		"```\n",
+		"game.add.sprite(0, 0, 'sky');\n",
+		"```\n",
+		"================================================================================"
+	],
+	"quest": [{
+		"quest_title": "透過game物件的什麼方法來建立場景物件？",
+		"quest_terms": [
+			"add",
+			"create",
+			"get",
+			"input"
+		],
+		"quest_answer": [
+			true,
+			false,
+			false,
+			false
+		],
+		"quest_limit": 1,
+		"quest_weight": 1
+	}]
+}, {
+	"step_name": "場景物件",
+	"md_content": [
+		"####在建立用程式create上方，新增platforms物件，並為物件添加物理系統\n",
+		"```\n",
+		"var platforms;\n",
+		"```\n",
+		"================================================================================",
+		"####接下來要在建立用程式create中，創造物件\n",
+		"####透過game物件的physics物理系統物件，使用startSystem方法，加入ARCADE物理系統\n",
+		"```\n",
+		"game.physics.startSystem(Phaser.Physics.ARCADE);\n",
+		"```\n",
+		"================================================================================",
+		"####在game物件加入背景之後，告訴game物件，platforms物件是一個群體，並幫platforms物件加上物理屬性\n",
+		"```\n",
+		"platforms = game.add.group();\n",
+		"platforms.enableBody = true;\n",
+		"```\n",
+		"================================================================================",
+		"####創造地板ground物件給platforms物件，並設定ground的大小，是否為靜止不動\n",
+		"```\n",
+		"var ground = platforms.create(0, game.world.height - 64, 'ground');\n",
+		"ground.scale.setTo(2, 2);\n",
+		"ground.body.immovable = true;\n",
+		"```\n",
+		"================================================================================",
+		"####創造平台ledge物件給platforms物件，並設定ledge的大小，是否為靜止不動\n",
+		"```\n",
+		"var ledge = platforms.create(0, 100, 'ground');\n",
+		"ledge.body.immovable = true;\n",
+		"ledge = platforms.create(150, 250, 'ground');\n",
+		"ledge.body.immovable = true;\n",
+		"```\n",
+		"================================================================================"
+	],
+	"quest": [{
+		"quest_title": "在這個專案中用了哪一個物理系統？",
+		"quest_terms": [
+			"ARCADE",
+			"BOX2D",
+			"NINJA",
+			"P2JS"
+		],
+		"quest_answer": [
+			true,
+			false,
+			false,
+			false
+		],
+		"quest_limit": 1,
+		"quest_weight": 1
+	}, {
+		"quest_title": "object.body.immovable設定了什麼？",
+		"quest_terms": [
+			"動畫片段",
+			"鍵盤事件",
+			"可移動性",
+			"顏色"
+		],
+		"quest_answer": [
+			false,
+			false,
+			true,
+			false
+		],
+		"quest_limit": 1,
+		"quest_weight": 1
+	}]
+}, {
+	"step_name": "玩家操作物件",
+	"md_content": [
+		"####新增玩家操作物件，包含其動畫與物理特性\n",
+		"================================================================================",
+		"####宣告玩家物件player\n",
+		"```\n",
+		"var player;\n",
+		"```\n",
+		"================================================================================",
+		"####接下來要在建立用程式create中，創造玩家物件player\n",
+		"####在game物件加入全部平台之後，告訴game物件，玩家物件player是一個動畫片段sprite\n",
+		"```\n",
+		"player = game.add.sprite(32, game.world.height - 150, 'dude');\n",
+		"```\n",
+		"================================================================================",
+		"####為玩家物件player加上物理屬性\n",
+		"```\n",
+		"game.physics.arcade.enable(player);\n",
+		"```\n",
+		"================================================================================",
+		"####設定玩家物件player的彈性是0.2，重力是300向下，接受所有碰撞\n",
+		"```\n",
+		"player.body.bounce.y = 0.2;\n",
+		"player.body.gravity.y = 300;\n",
+		"player.body.collideWorldBounds = true;\n",
+		"```\n",
+		"================================================================================",
+		"####設定玩家物件有兩個動畫片段，分別為'left'和'right'\n",
+		"```\n",
+		"player.animations.add('left', [0, 1, 2, 3], 10, true);\n",
+		"player.animations.add('right', [5, 6, 7, 8], 10, true);\n",
+		"```\n",
+		"================================================================================"
+	],
+	"quest": [{
+		"quest_title": "玩家物件player是由add方法，加入在game物件哪個分類？",
+		"quest_terms": [
+			"image",
+			"sprite",
+			"group",
+			"text"
+		],
+		"quest_answer": [
+			false,
+			true,
+			false,
+			false
+		],
+		"quest_limit": 1,
+		"quest_weight": 1
+	}, {
+		"quest_title": "player.body.collideWorldBounds 設定了什麼？",
+		"quest_terms": [
+			"設定物件位置",
+			"設定物件動畫",
+			"接受鍵盤事件",
+			"接受所有碰撞"
+		],
+		"quest_answer": [
+			false,
+			false,
+			false,
+			true
+		],
+		"quest_limit": 1,
+		"quest_weight": 1
+	}]
+}, {
+	"step_name": "物件基礎互動",
+	"md_content": [
+		"####在遊戲用程式update中添加玩家與場景物件之間的碰撞事件\n",
+		"####透過game物件的physics物理系統物件，其中的ARCADE物理系統，以collide方法，為玩家物件player和平台群組platforms建立碰撞事件\n",
+		"```\n",
+		"game.physics.arcade.collide(player, platforms);\n",
+		"```\n",
+		"================================================================================"
+	],
+	"quest": [{
+		"quest_title": "game.physics.arcade.collide 設定了什麼？",
+		"quest_terms": [
+			"添加物件間的碰撞關係",
+			"改變物件位置",
+			"改變物件圖像",
+			"添加物件的物理碰撞"
+		],
+		"quest_answer": [
+			true,
+			false,
+			false,
+			false
+		],
+		"quest_limit": 1,
+		"quest_weight": 1
+	}]
+}, {
+	"step_name": "玩家操作互動",
+	"md_content": [
+		"####添加控制互動事件，包含各種按鍵事件\n",
+		"####在玩家物件player下方加上按鍵監聽物件cursors\n",
+		"```\n",
+		"var cursors;\n",
+		"```\n",
+		"================================================================================",
+		"####接下來要在建立用程式create中，在game物件加入玩家物件之後，告訴game物件，按鍵監聽物件cursors是用來監聽鍵盤事件\n",
+		"```\n",
+		"cursors = game.input.keyboard.createCursorKeys();\n",
+		"```\n",
+		"================================================================================",
+		"####接下來要在遊戲用程式update中，在碰撞事件之後，先停止玩家物件在X軸上的力量\n",
+		"```\n",
+		"player.body.velocity.x = 0;\n",
+		"```\n",
+		"================================================================================",
+		"####玩家物件的動畫有九格，0~3格是向左邊，5~9格是向右邊",
+		"![dude.png](images/dude.png)\n\n",
+		"================================================================================",
+		"####在update程式中，為每幀設置特別按鍵按下後，要發生的變化\n",
+		"================================================================================",
+		"####如果按下的是左鍵，讓玩家物件增加朝左邊的力道，x軸的左邊是負值，設為-150，再讓玩家物件播放朝左走動的動畫\n",
+		"```\n",
+		"if (cursors.left.isDown) {\n",
+		"\tplayer.body.velocity.x = -150;\n",
+		"\tplayer.animations.play('left');\n",
+		"```\n",
+		"================================================================================",
+		"####如果按下的是右鍵，讓玩家物件增加朝右邊的力道，x軸的左邊是正值，設為150，再讓玩家物件播放朝右走動的動畫\n",
+		"```\n",
+		"} else if (cursors.right.isDown) {\n",
+		"\tplayer.body.velocity.x = 150;\n",
+		"\tplayer.animations.play('right');\n",
+		"```\n",
+		"================================================================================",
+		"####沒有任何按鍵按下時，讓玩家物件動畫停止，並設為朝向畫面的停止畫面\n",
+		"```\n",
+		"} else {\n",
+		"\tplayer.animations.stop();\n",
+		"\tplayer.frame = 4;\n",
+		"}\n",
+		"```\n",
+		"================================================================================",
+		"####如果按下的是上鍵，而玩家物件下方有碰觸物件時，讓玩家物件增加朝上方的力道，y軸的上方是負值，設為-350\n",
+		"```\n",
+		"if (cursors.up.isDown && player.body.touching.down) {\n",
+		"\tplayer.body.velocity.y = -350;\n",
+		"}\n",
+		"```\n",
+		"================================================================================"
+	],
+	"quest": [{
+		"quest_title": "game.input.keyboard.createCursorKeys 設定了什麼？",
+		"quest_terms": [
+			"改變物件位置",
+			"添加物件間的碰撞關係",
+			"改變物件圖像",
+			"添加方向鍵的監聽事件"
+		],
+		"quest_answer": [
+			false,
+			false,
+			false,
+			true
+		],
+		"quest_limit": 1,
+		"quest_weight": 1
+	}, {
+		"quest_title": "為什麼要設定player.body.velocity.x？",
+		"quest_terms": [
+			"設定x軸上的位置",
+			"設定x軸上的力道",
+			"設定x軸上的時間",
+			"設定x軸上的質量"
+		],
+		"quest_answer": [
+			false,
+			true,
+			false,
+			false
+		],
+		"quest_limit": 1,
+		"quest_weight": 1
+	}]
+}, {
+	"step_name": "非玩家物件事件",
+	"md_content": [
+		"####添加非玩家物件事件，包含碰撞事件、物理關係，並添加至所設置之場景位置\n",
+		"================================================================================",
+		"####於create中，透過game物件加入stars群組\n",
+		"```\n",
+		"var stars;\n",
+		"function create(){\n",
+		"\tstars = game.add.group();\n",
+		"}\n",
+		"```\n",
+		"================================================================================",
+		"####給予stars物理屬性\n",
+		"```\n",
+		"stars.enableBody = true;\n",
+		"```\n",
+		"================================================================================",
+		"####為stars群組建立12個star物件，因為透過自game物件添加的create方法為star物件放置于特定位置、並給予圖像\n",
+		"####並為每一個star物件添加300重力和隨機的彈性\n",
+		"```\n",
+		"for (var i = 0; i < 12; i++) {\n",
+		"\tvar star = stars.create(i * 32, 0, 'star');\n",
+		"\tstar.body.gravity.y = 300;\n",
+		"\tstar.body.bounce.y = 0.7 + Math.random() * 0.2;\n",
+		"}\n",
+		"```\n",
+		"================================================================================",
+		"####添加stars物件和platforms物件之間的碰撞\n",
+		"####添加player物件和stars物件之間覆蓋時的事件觸發collectStar\n",
+		"####在遊戲開始時讓player物件在X軸上的力歸零\n",
+		"```\n",
+		"game.physics.arcade.collide(stars, platforms);\n",
+		"game.physics.arcade.overlap(player, stars, collectStar, null, this);\n",
+		"player.body.velocity.x = 0;\n",
+		"```\n",
+		"================================================================================",
+		"####設定collectStar，當碰撞時執行，刪除star物件\n",
+		"```\n",
+		"function collectStar(player, star) {\n",
+		"\tstar.kill();\n",
+		"}\n",
+		"```\n",
+		"================================================================================"
+	],
+	"quest": [{
+		"quest_title": "game.physics.arcade.collide 設定了什麼？",
+		"quest_terms": [
+			"添加物件間的碰撞關係",
+			"改變物件位置",
+			"改變物件圖像",
+			"添加物件的物理碰撞"
+		],
+		"quest_answer": [
+			true,
+			false,
+			false,
+			false
+		],
+		"quest_limit": 1,
+		"quest_weight": 1
+	}]
+}, {
+	"step_name": "訊息更新",
+	"md_content": [
+		"####增加訊息畫面，碰撞事件之相關邏輯\n",
+		"================================================================================",
+		"####建立分數訊息呈現物件\n",
+		"```\n",
+		"var scoreText;\n",
+		"```\n",
+		"================================================================================",
+		"####透過game物件添加文字物件，設定了x、y軸位置，呈現的字串和字體大小顏色\n",
+		"```\n",
+		"function create(){\n",
+		"\tscoreText = game.add.text(16, 16, 'score: 0', {\n",
+		"\t\tfontSize: '32px',\n",
+		"\t\tfill: '#000'\n",
+		"\t});\n",
+		"}\n",
+		"```\n",
+		"================================================================================",
+		"####score物件用來紀錄獲得的分數，gameover物件用來控制遊戲是否已經結束\n",
+		"```\n",
+		"var score = 0;\n",
+		"var gameover = false;\n",
+		"```\n",
+		"================================================================================",
+		"####在create中，用判斷gameover的真假值包覆鍵盤控制區塊\n",
+		"```\n",
+		"function update(){\n",
+		"\tif (!gameover) {\n",
+		"\t}\n",
+		"}\n",
+		"```\n",
+		"================================================================================",
+		"####在collectStar函數中添加，當player和star碰撞時，增加十分，並更新分數訊息\n",
+		"```\n",
+		"score += 10;\n",
+		"scoreText.text = 'Score: ' + score;\n",
+		"```\n",
+		"================================================================================",
+		"####在collectStar函數中添加，當分數達到120分時，調整gameover為真值，讓遊戲結束\n",
+		"####停止player物件的動畫，調整圖像在第四幕\n",
+		"```\n",
+		"if (score === 120) {\n",
+		"\tscoreText.text = 'Game Over!!';\n",
+		"\tgameover = true;\n",
+		"\tplayer.animations.stop();\n",
+		"\tplayer.frame = 4;\n",
+		"}\n",
+		"```\n",
+		"================================================================================"
+	],
+	"quest": [{
+		"quest_title": "gameover物件的真假值影響了什麼？",
+		"quest_terms": [
+			"玩家物件不再因為鍵盤事件而改變",
+			"改變分數文字呈現為遊戲結束",
+			"停止玩家物件的動畫",
+			"固定玩家物件的動畫在第四幕"
+		],
+		"quest_answer": [
+			true,
+			true,
+			true,
+			true
+		],
+		"quest_limit": 4,
+		"quest_weight": 1
+	}]
+}]

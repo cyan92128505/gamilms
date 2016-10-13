@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+
+
+       444444444       000000000            444444444
+      4::::::::4     00:::::::::00         4::::::::4
+     4:::::::::4   00:::::::::::::00      4:::::::::4
+    4::::44::::4  0:::::::000:::::::0    4::::44::::4
+   4::::4 4::::4  0::::::0   0::::::0   4::::4 4::::4
+  4::::4  4::::4  0:::::0     0:::::0  4::::4  4::::4
+ 4::::4   4::::4  0:::::0     0:::::0 4::::4   4::::4
+4::::444444::::4440:::::0 000 0:::::04::::444444::::444
+4::::::::::::::::40:::::0 000 0:::::04::::::::::::::::4
+4444444444:::::4440:::::0     0:::::04444444444:::::444
+          4::::4  0:::::0     0:::::0          4::::4
+          4::::4  0::::::0   0::::::0          4::::4
+          4::::4  0:::::::000:::::::0          4::::4
+        44::::::44 00:::::::::::::00         44::::::44
+        4::::::::4   00:::::::::00           4::::::::4
+        4444444444     000000000             4444444444
+
+
+
+  This is the default "404: Not Found" page.
+  User agents that don't "Accept" HTML will see a JSON version instead.
+  You can customize the control logic for your needs in `config/404.js`
+
+  Sails considers a request to be in a "404: Not Found" state when a user
+  requests a URL which doesn't match any of your app's routes or blueprints.
+
+  You can also trigger this response from one of your controllers or policies with:
+  `return res.notFound();`
+
+
+-->
+<html>
+
+<head>
+    <title>Page Not Found</title>
+    <style>
+        body {
+            background-color: #f2eeed;
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        h1 {
+            color: #848484;
+            letter-spacing: .08em;
+            font-size: 20px;
+        }
+
+        h2 {
+            color: #333232;
+            font-weight: normal;
+            font-size: 27px;
+        }
+
+        a {
+            color: #78c4dc;
+        }
+
+        .title {
+            background: white;
+            margin: 0 auto;
+            width: 500px;
+            padding: 40px;
+            box-shadow: 0px 2px 3px #b9b6b5;
+        }
+
+        .cloud-flip {
+            font-size: 60px;
+            margin: 0 0 40px -30px;
+            color: #f36348;
+        }
+
+        .cloud {
+            font-size: 90px;
+            animation-name: flip;
+            animation-duration: 1.4s;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+            animation-delay: .4s;
+            transform-origin: 80% 50%;
+            display: inline-block;
+        }
+
+        @keyframes flip {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(180deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <div class='title'>
+        <h1>404</h1>
+        <h2>Can't find it.</h2>
+        <h2>
+            <% if (typeof error!== 'undefined') { %>
+                <%= error %>
+                    <% } else { %>
+                        The page you were trying to reach doesn't exist.
+                        <% } %>
+        </h2>
+        <div class='cloud-flip'>
+            <span>(╯°□°）╯</span>
+            <span class='cloud'>
+                <i class='icon-cloud'></i>
+            </span>
+        </div>
+        <p>
+            <a href="<%= project_name %>">Go back to the dashboard</a>
+        </p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,212 @@
+VariableDeclaration 宣告變數
+    var self = this;
+    ====>
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "self"
+          },
+          "init": {
+            "type": "ThisExpression"
+          }
+        }
+      ],
+      "kind": "var"
+    }
+
+AssignmentExpression 對價性質 含有左右值比較
+
+    $rootScope.isAuthenticated = true;
+    ====>
+    "type": "AssignmentExpression",
+    "operator": "=",
+    "left": {
+        "type": "MemberExpression",
+        "computed": false,
+        "object": {
+            "type": "Identifier",
+            "name": "$rootScope"
+        },
+        "property": {
+            "type": "Identifier",
+            "name": "isAuthenticated"
+        }
+    },
+    "right": {
+        "type": "Literal",
+        "value": true,
+        "raw": "true"
+    }
+
+    $scope.modal.hide();
+    ====>
+    "type": "ExpressionStatement",
+    "expression": {
+        "type": "CallExpression",
+        "callee": {
+            "type": "MemberExpression",
+            "computed": false,
+            "object": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                    "type": "Identifier",
+                    "name": "$scope"
+                },
+                "property": {
+                    "type": "Identifier",
+                    "name": "modal"
+                }
+            },
+            "property": {
+                "type": "Identifier",
+                "name": "hide"
+            }
+        },
+        "arguments": []
+    }
+
+
+Literal 純值
+    true
+    ====>
+    "type": "Literal",
+    "value": true,
+    "raw": "true"
+
+IfStatement 判斷標誌
+    test 條件判斷
+    consequent 執行
+    if (typeof callback === 'function') {
+        callback();
+    }
+    ====>
+    {
+        "type": "IfStatement",
+        "test": {
+            "type": "BinaryExpression",
+            "operator": "===",
+            "left": {
+                "type": "UnaryExpression",
+                "operator": "typeof",
+                "argument": {
+                    "type": "Identifier",
+                    "name": "callback"
+                },
+                "prefix": true
+            },
+            "right": {
+                "type": "Literal",
+                "value": "function",
+                "raw": "'function'"
+            }
+        },
+        "consequent": {
+            "type": "BlockStatement",
+            "body": [{
+                "type": "ExpressionStatement",
+                "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                        "type": "Identifier",
+                        "name": "callback"
+                    },
+                    "arguments": []
+                }
+            }]
+        },
+        "alternate": null
+    }
+
+
+
+FunctionExpression 函式宣告
+    function(statusCode) {
+    }
+    ====>
+    {
+        "type": "FunctionExpression",
+        "id": null,
+        "params": [{
+            "type": "Identifier",
+            "name": "statusCode"
+        }],
+        "defaults": [],
+        "body": {
+            "type": "BlockStatement",
+            "body": []
+        },
+        "generator": false,
+        "expression": false
+    }
+
+
+
+ForStatement for迴圈
+    for (var i = 0; i < books.length; i++) {
+    };
+    ====>
+    {
+        "type": "ForStatement",
+        "init": {
+            "type": "VariableDeclaration",
+            "declarations": [{
+                "type": "VariableDeclarator",
+                "id": {
+                    "type": "Identifier",
+                    "name": "i"
+                },
+                "init": {
+                    "type": "Literal",
+                    "value": 0,
+                    "raw": "0"
+                }
+            }],
+            "kind": "var"
+        },
+        "test": {
+            "type": "BinaryExpression",
+            "operator": "<",
+            "left": {
+                "type": "Identifier",
+                "name": "i"
+            },
+            "right": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                    "type": "Identifier",
+                    "name": "books"
+                },
+                "property": {
+                    "type": "Identifier",
+                    "name": "length"
+                }
+            }
+        },
+        "update": {
+            "type": "UpdateExpression",
+            "operator": "++",
+            "argument": {
+                "type": "Identifier",
+                "name": "i"
+            },
+            "prefix": false
+        },
+        "body": {
+            "type": "BlockStatement",
+            "body": []
+        }
+    }
+
+ArrayExpression 陣列
+    []
+    ====>
+    {
+        "type": "ArrayExpression",
+        "elements": []
+    }

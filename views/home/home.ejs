@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gamification Learning Management System</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="AomaShinku" />
+    <meta name="author" content="AomaShinku" />
+
+    <link href="<%= project_name %>/styles/bootstrap.css" rel="stylesheet" />
+    <link href="<%= project_name %>/styles/bootstrap-theme.css" rel="stylesheet" />
+    <link href="<%= project_name %>/styles/angular-material.min.css" rel="stylesheet" />
+    <link href="<%= project_name %>/styles/codemirror.css" rel="stylesheet" />
+    <link href="<%= project_name %>/styles/monokai.css" rel="stylesheet" />
+    <link href="<%= project_name %>/styles/default_highlight.css" rel="stylesheet" />
+    <link href="<%= project_name %>/styles/nv.d3.min.css" rel="stylesheet" />
+    <link href="<%= project_name %>/styles/gamilms.css" rel="stylesheet" />
+    <link href="<%= project_name %>/styles/style.css" rel="stylesheet" />
+    <link href="<%= project_name %>/styles/star.css" rel="stylesheet" />
+
+</head>
+
+<body ng-app="application">
+    <!-- Default home page -->
+    <div ng-controller="userCtrl">
+        <div ng-show='onboarding_info' ng-click="close_onboarding()">
+            <h4 ng-bind="onboarding_info_text"  ng-style="onboarding_style" ng-click="close_onboarding()"></h4>
+        </div>
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" ng-click="ui_sref({url:'profile',params:{uid: '<%= uid %>'}})" ng-bind="project_name"></a>
+                </div>
+                <div uib-collapse="navCollapsed" class="navbar-collapse collapse navbar-responsive-collapse" ng-click="navCollapsed = true">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li tooltip-placement="bottom" uib-tooltip="個人頁面" tooltip-enable="trigger_tooltip_step">
+                            <a class="nav_a" ng-click="ui_sref({url:'profile',params:{uid: '<%= uid %>'}})">
+                                <img class="nav_img" ng-src="{{profile_img}}"></img><span><strong>{{username}}</strong></span>
+                            </a>
+                        </li>
+                        <!-- <li onboarding="subject">
+                            <a class="nav_a" ng-click="ui_sref({url:'subject'})"><span class="icon-youtube-play"></span><span class="nav_a_text">課程</span></a>
+                        </li> -->
+                        <li tooltip-placement="bottom" uib-tooltip="學習區" tooltip-enable="trigger_tooltip_step">
+                            <a class="nav_a" ng-click="ui_sref({url:'code'})"><span class="icon-file-code"></span><span class="nav_a_text">學習區</span></a>
+                        </li>
+                        <li tooltip-placement="bottom" uib-tooltip="排行榜" tooltip-enable="trigger_tooltip_step">
+                            <a class="nav_a" ng-click="ui_sref({url:'leaderboard'})"><span class="icon-podium"></span><span class="nav_a_text">排行榜</span></a>
+                        </li>
+                        <li tooltip-placement="bottom" uib-tooltip="獎章" tooltip-enable="trigger_tooltip_step">
+                            <a class="nav_a" ng-click="ui_sref({url:'badge'})"><span class="icon-trophy"></span><span class="nav_a_text">獎章</span></a>
+                        </li>
+                        <li tooltip-placement="bottom" uib-tooltip="關於" tooltip-enable="trigger_tooltip_step">
+                            <a class="nav_a" ng-click="ui_sref({url:'about'})"><span class="icon-shareable"></span><span class="nav_a_text">關於</span></a>
+                        </li>
+                        <li tooltip-placement="bottom" uib-tooltip="登出" tooltip-enable="trigger_tooltip_step">
+                            <a class="nav_a" ng-click="get_link('<%= project_name %>/logout')" ng-click=""><span class="icon-logout"></span><span class="nav_a_text">登出</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+        <div class="app_loader" ng-show="app_loader"></div>
+        <div id="header_login" ng-style="footer_position">
+            <div class="container">
+                <div class="row" ui-view="gmailms">
+                    <div ui-view="content_left"></div>
+                    <div ui-view="content_right"></div>
+                </div>
+                <div class="snackbar-container" data-snackbar="true"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-3">
+                        <p class="copyright">Copyright &copy; 2016 - Designed by Wei-Hsin Liao
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var gamilms_uid = '<%= uid %>';
+        var project_name = '<%= project_name %>';
+    </script>
+    <!-- <script src="https://www.youtube.com/iframe_api"></script> -->
+    <!--SCRIPTS-->
+    <script src="<%= project_name %>/javascript/lib/traverse.js"></script>
+    <script src="<%= project_name %>/javascript/lib/gamilms_logo.js"></script>
+    <script src="<%= project_name %>/javascript/lib/angular.min.js"></script>
+    <script src="<%= project_name %>/javascript/lib/angular-animate.min.js"></script>
+    <script src="<%= project_name %>/javascript/lib/angular-aria.min.js"></script>
+    <script src="<%= project_name %>/javascript/lib/loading-bar.js"></script>
+    <script src="<%= project_name %>/javascript/lib/angular-nvd3.js"></script>
+    <script src="<%= project_name %>/javascript/lib/angular-resource.min.js"></script>
+    <script src="<%= project_name %>/javascript/lib/angular-sanitize.min.js"></script>
+    <script src="<%= project_name %>/javascript/lib/codemirror.js"></script>
+    <script src="<%= project_name %>/javascript/lib/code-blast.js"></script>
+    <script src="<%= project_name %>/javascript/lib/d3.min.js"></script>
+    <script src="<%= project_name %>/javascript/lib/nv.d3.min.js"></script>
+    <script src="<%= project_name %>/javascript/lib/ui-bootstrap-tpls-1.2.1.js"></script>
+    <script src="<%= project_name %>/javascript/lib/ui-codemirror-css.js"></script>
+    <script src="<%= project_name %>/javascript/lib/ui-codemirror-javascript.js"></script>
+    <script src="<%= project_name %>/javascript/lib/ui-codemirror-sublime.js"></script>
+    <script src="<%= project_name %>/javascript/lib/ui-codemirror-xml.js"></script>
+    <script src="<%= project_name %>/javascript/lib/ui-codemirror.min.js"></script>
+    <script src="<%= project_name %>/javascript/lib/ui-router.min.js"></script>
+    <script src="<%= project_name %>/javascript/lib/video-angular-youtube-embed.min.js"></script>
+    <script src="<%= project_name %>/javascript/lib/showdown.min.js"></script>
+    <script src="<%= project_name %>/javascript/lib/highlight.pack.js"></script>
+    <script src="<%= project_name %>/javascript/lib/angular-markdown.js"></script>
+    <script src="<%= project_name %>/javascript/lib/angular-highlightjs.min.js"></script>
+    <script src="<%= project_name %>/javascript/lib/angular-ivonet-markdown.min.js"></script>
+    <script src="<%= project_name %>/javascript/lib/angular-material.min.js"></script>
+
+    <script src="<%= project_name %>/javascript/application.js"></script>
+
+    <script src="<%= project_name %>/javascript/services/gamiEvent.js"></script>
+    <script src="<%= project_name %>/javascript/services/command.js"></script>
+    <script src="<%= project_name %>/javascript/services/fileReader.js"></script>
+    <script src="<%= project_name %>/javascript/services/snackbar.js"></script>
+    <script src="<%= project_name %>/javascript/services/onboarding.js"></script>
+
+    <script src="<%= project_name %>/javascript/directives/gamiUnit.js"></script>
+    <script src="<%= project_name %>/javascript/directives/countTo.js"></script>
+    <script src="<%= project_name %>/javascript/directives/focusMe.js"></script>
+    <script src="<%= project_name %>/javascript/directives/ngFileSelect.js"></script>
+    <script src="<%= project_name %>/javascript/directives/onboarding.js"></script>
+    <script src="<%= project_name %>/javascript/directives/scrollGlueBottom.js"></script>
+    <script src="<%= project_name %>/javascript/directives/snackbar.js"></script>
+
+    <script src="<%= project_name %>/javascript/controllers/profile.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/subject.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/video.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/code.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/leaderboard.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/badge.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/about.js"></script>
+
+    <script src="<%= project_name %>/javascript/controllers/instance.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/challenge.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/newFile.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/phone.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/terminal.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/video_quest.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/logo.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/survey.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/quest.js"></script>
+    <script src="<%= project_name %>/javascript/controllers/tutor.js"></script>
+
+
+
+
+    <!--SCRIPTS END-->
+</body>
+
+</html>

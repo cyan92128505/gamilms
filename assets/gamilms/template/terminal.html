@@ -1,0 +1,18 @@
+<div class="terminal_header">
+    <div class="terminal_dot terminal_red" ng-click="close()"></div>
+    <div class="terminal_dot terminal_yellow"></div>
+    <div class="terminal_dot terminal_green"></div>
+</div>
+<div class="terminal_panel" scroll-glue-bottom="glued" ng-click="turn_input()">
+    <div class="terminal_action">
+            <div class="terminal_output" ng-repeat="output in outputs track by $index">
+                <span class="terminal_user_name">{{output.user_name}}</span>{{' '+output.command}}
+            </div>
+            <div class="terminal_command">
+                <span class="terminal_symbol" ng-bind="user_name"></span>
+                <input type="terminal_text" ng-show="terminal_input" focus-me="terminal_input" autofocus="true" class="in" ng-model="command" ng-keydown="onKeyPress($event)"/>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- http://codepen.io/sthupukari/pen/VYjGpL -->

@@ -1,0 +1,177 @@
+[
+  {
+    "type": "tag",
+    "name": "ion-view",
+    "attribs": {
+      "view-title": "{{::book.title}}",
+      "hide-back-button": "true"
+    },
+    "children": [
+      {
+        "type": "tag",
+        "name": "ion-content",
+        "children": [
+          {
+            "type": "tag",
+            "name": "div",
+            "attribs": {
+              "class": "list card"
+            },
+            "children": [
+              {
+                "type": "tag",
+                "name": "div",
+                "attribs": {
+                  "class": "item item-avatar"
+                },
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "img",
+                    "attribs": {
+                      "ng-src": "{{::book.author_image}}"
+                    }
+                  },
+                  {
+                    "type": "tag",
+                    "name": "h2",
+                    "children": [
+                      {
+                        "data": "{{::book.title}}",
+                        "type": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tag",
+                    "name": "p",
+                    "children": [
+                      {
+                        "data": "{{::book.release_date | date:'yyyy-MM-dd'}}",
+                        "type": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tag",
+                    "name": "p",
+                    "children": [
+                      {
+                        "data": "{{::book.author}}",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tag",
+                "name": "div",
+                "attribs": {
+                  "class": "item item-body"
+                },
+                "children": [
+                  {
+                    "type": "tag",
+                    "name": "img",
+                    "attribs": {
+                      "class": "full-image",
+                      "ng-src": "{{::book.image}}"
+                    }
+                  },
+                  {
+                    "type": "tag",
+                    "name": "p",
+                    "children": [
+                      {
+                        "data": "\n                    {{::book.long_description}}\n                ",
+                        "type": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tag",
+                    "name": "p",
+                    "attribs": {
+                      "class": "row"
+                    },
+                    "children": [
+                      {
+                        "type": "tag",
+                        "name": "label",
+                        "attribs": {
+                          "class": "col"
+                        },
+                        "children": [
+                          {
+                            "data": "\n                        Rating : ",
+                            "type": "text"
+                          },
+                          {
+                            "type": "tag",
+                            "name": "i",
+                            "attribs": {
+                              "class": "icon ion-star",
+                              "ng-repeat": "i in getNumber(book.rating) track by $index"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "tag",
+                        "name": "label",
+                        "attribs": {
+                          "class": "col"
+                        },
+                        "children": [
+                          {
+                            "data": "\n                        Price :\n                        ",
+                            "type": "text"
+                          },
+                          {
+                            "type": "tag",
+                            "name": "label",
+                            "attribs": {
+                              "class": "subdued"
+                            },
+                            "children": [
+                              {
+                                "data": "{{::book.price | currency}}",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tag",
+                    "name": "button",
+                    "attribs": {
+                      "class": "button button-assertive button-block",
+                      "ng-click": "addToCart()"
+                    },
+                    "children": [
+                      {
+                        "type": "tag",
+                        "name": "i",
+                        "attribs": {
+                          "class": "icon ion-checkmark"
+                        }
+                      },
+                      {
+                        "data": " Add to Cart\n                ",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

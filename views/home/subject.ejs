@@ -1,0 +1,46 @@
+<div class="profile_badge_animation">
+    <span class="toggler" ng-class="{'active': isactive}" ng-click="formturn('grid')">
+        <span class="icon-layout"></span>
+    </span>
+    <!-- <span class="toggler" ng-class="{'active': !isactive}" ng-click="formturn('list')">
+        <span class="icon-menu"></span>
+    </span> -->
+    <div>
+        <ul class="subjects" ng-class="{'grid': grid_class,'list':!grid_class}">
+            <li class="subject-item" ng-repeat="subject in subjects" ng-click="link(subject.provider,subject.vid)">
+                <!-- <span class="subject-provider list-only">
+                    <a ng-click="link(subject.provider,subject.vid)">{{subject.provider}}</a>
+                </span> -->
+                <div class="text-center subject_img" ng-style="subject.background_image">
+                    <!-- <img ng-src="{{subject.icon}}" /> -->
+                </div>
+                <span class="subject-name">
+                    {{subject.title}}
+                </span>
+                <!-- <span class="subject-provider grid-only">
+                    <a ng-click="link(subject.provider,subject.vid)">{{subject.provider}}</a>
+                </span> -->
+
+                <div class="pull-right">
+                    <span class="subject-progress">
+                        <span class="subject-progress-bg">
+                            <span class="subject-progress-fg" ng-style="subject.finish_css"></span>
+                    </span>
+                    <span class="subject-progress-labels">
+                            <span class="subject-progress-label">
+                                {{subject.score}}%
+                            </span>
+                    <span class="subject-completes">
+                                {{subject.score}} / 100
+                            </span>
+                    </span>
+                    </span>
+                    <span class="subject-completes">
+                        {{subject.active_time}}
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>

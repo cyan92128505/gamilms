@@ -1,0 +1,11 @@
+<div class="profile_image">
+    <h1 class="text-center">排行榜</h1>
+    <ul class="leader">
+        <li ng-repeat="user in users track by $index" ng-style="setleaderterm($last,user.uid)">
+            <span class="list_num" ng-bind="user.index"></span>
+            <img ng-src="{{user.img}}" />
+            <h2 ng-bind="user.user_name" ng-click="getProfile(user.uid)"></h2>
+            <span class="number" ng-bind="user.engage_point"></span>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,16 @@
+<div class="col-lg-5 well">
+    <div class="text-center">
+        <h1 id="main-title">
+            <%= user.name %>
+        </h1>
+        <img src="http://graph.facebook.com/<%= user.uid %>/picture?type=large" class="img-circle"></img>
+    </div>
+    <h2>等級
+        <%= user.journey_level %>
+    </h2>
+    <h2>目前參與量</h2>
+    <uib-progressbar value="<%= user.engage_point %>" max='500'></uib-progressbar>
+    <a class="sport" href="/apk/<%= user.uid %>.apk">
+        <label><%= user.uid %>.apk</label>
+    </a>
+</div>
