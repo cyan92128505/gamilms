@@ -69,3 +69,6 @@ npm run test
 **Note:** After a successful sign in with Facebook, a user will be redirected back to home page with appended hash `#_=_` in the URL. It is *not* a bug. See this [Stack Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url) discussion for ways to handle it.
 
 <hr>
+## Demo
+<img src="https://raw.githubusercontent.com/cyan92128505/gamilms/master/doc/index.png" width="450">
+<img src="https://raw.githubusercontent.com/cyan92128505/gamilms/master/doc/profile.png" width="450">
