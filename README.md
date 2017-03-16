@@ -4,7 +4,6 @@
 >
 
 
-<hr>
 ## Prerequisite Technologies
 ### Linux
 * *Node.js* - <a href="http://nodejs.org/download/">Download</a> and Install Node.js
@@ -49,8 +48,9 @@ node server.js
 npm run test
 ```
 
-<hr>
+
 ## Auth Setting
+
 <img src="http://www.doit.ba/img/facebook.jpg" width="200">
 
 - Visit [Facebook Developers](https://developers.facebook.com/)
