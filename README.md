@@ -1,7 +1,4 @@
 # Gamilms
-=============
-
-
 >
 > Use MEAN (MongoDB, Express, Angular and Node) stack for build a “Meaningful Gamification Learning Management System”
 >
@@ -55,6 +52,7 @@ npm run test
 <hr>
 ## Auth Setting
 <img src="http://www.doit.ba/img/facebook.jpg" width="200">
+
 - Visit [Facebook Developers](https://developers.facebook.com/)
 - Click **My Apps**, then select **Add a New App* from the dropdown menu
 - Select **Website** platform and enter a new name for your app
@@ -63,12 +61,14 @@ npm run test
 - Click on **Create App ID** button
 - In the upper right corner click on **Skip Quick Star**
 - Copy and paste *App ID* and *App Secret* keys into `/config/system_config.json`
- - **Note:** *App ID* is **clientID**, *App Secret* is **clientSecret**
+- **Note:** *App ID* is **clientID**, *App Secret* is **clientSecret**
 - Enter `http://localhost::port/gamilms/` under *Site URL*
 
 **Note:** After a successful sign in with Facebook, a user will be redirected back to home page with appended hash `#_=_` in the URL. It is *not* a bug. See this [Stack Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url) discussion for ways to handle it.
 
 <hr>
 ## Demo
-<img src="https://raw.githubusercontent.com/cyan92128505/gamilms/master/doc/index.png" width="450">
-<img src="https://raw.githubusercontent.com/cyan92128505/gamilms/master/doc/profile.png" width="450">
+
+<img src="https://raw.githubusercontent.com/cyan92128505/gamilms/master/doc/index.png" width="100%">
+
+<img src="https://raw.githubusercontent.com/cyan92128505/gamilms/master/doc/profile.png" width="100%">
