@@ -39,16 +39,5 @@ module.exports = {
             });
 
         };
-    },
-    gender: function() {
-        return function gender(req, res, next) {
-            if (!!req.body.gender_list) {
-                var gender_list = req.body.gender_list;
-                fsx.outputJson(process.cwd() + '/document/gender_list.json', gender_list, function(err) {
-                    if (err) console.error(err);
-                    return res.send('gender ok');
-                });
-            }
-        };
     }
 };
