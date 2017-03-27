@@ -1,4 +1,5 @@
-var badges_info_list = require(process.cwd() + '/document/badges_info_list.json');
+var path = require('path');
+var badges_info_list = require(path.join(process.cwd(), '/document/badges_info_list.json'));
 module.exports = {
     get_arch_list: function(Models) {
         return function(req, res, next) {
