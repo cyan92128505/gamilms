@@ -51,7 +51,7 @@ npm run test
 
 ## Auth Setting
 
-<img src="http://www.doit.ba/img/facebook.jpg" width="200">
+<img src="https://raw.githubusercontent.com/cyan92128505/gamilms/main/mean-stack/doc/auth-facebook.svg" width="100%">
 
 - Visit [Facebook Developers](https://developers.facebook.com/)
 - Click **My Apps**, then select **Add a New App* from the dropdown menu
