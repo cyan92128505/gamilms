@@ -69,6 +69,6 @@ npm run test
 <hr>
 ## Demo
 
-<img src="https://raw.githubusercontent.com/cyan92128505/gamilms/master/doc/index.png" width="100%">
+<img src="https://raw.githubusercontent.com/cyan92128505/gamilms/main/mean-stack/doc/index.png" width="100%">
 
-<img src="https://raw.githubusercontent.com/cyan92128505/gamilms/master/doc/profile.png" width="100%">
+<img src="https://raw.githubusercontent.com/cyan92128505/gamilms/main/mean-stack/doc/profile.png" width="100%">
