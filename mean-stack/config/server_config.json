@@ -1,9 +1,0 @@
-{
-    "project_name": "gamilms",
-    "host": "Your Host IP",
-    "port": "Your Port",
-    "passport": {
-        "clientID": "Your Facebook ID",
-        "clientSecret": "Your Facebook Secret"
-    }
-}
