@@ -1,6 +1,9 @@
+<img src="https://raw.githubusercontent.com/cyan92128505/gamilms/main/design/gamilms.svg" width="100%">
+
 # Gamilms
+
 >
-> “Meaningful Gamification Learning Management System”
+> Meaningful Gamification Learning Management System
 >
 
 <hr>
