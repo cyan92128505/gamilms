@@ -4,6 +4,7 @@
     "description": "a gamification learning management system",
     "main": "server.js",
     "scripts": {
+        "start": "DEBUG=express:* node server.js",
         "test": " DEBUG=express:* node server.js",
         "init": " node ./tool/destroy_all.js"
     },
