@@ -1,24 +1,24 @@
-var express = require("express");
-var colors = require("colors/safe");
-var bodyParser = require("body-parser");
-var multer = require("multer");
-var fs = require("fs-extra");
-var morgan = require("morgan-debug");
-var passport = require("passport");
-var Strategy = require("passport-facebook").Strategy;
-var mongoose = require("mongoose");
-var session = require("express-session");
-var expressSessionPassportCleanup = require("express-session-passport-cleanup");
-var MongoStore = require("connect-mongo")(session);
-var mongoose_schema = mongoose.Schema;
-var Models_config = require("./config/model_config.js");
-var ON_DEATH = require("death");
+const express = require("express");
+const colors = require("colors/safe");
+const bodyParser = require("body-parser");
+const multer = require("multer");
+const fs = require("fs-extra");
+const morgan = require("morgan-debug");
+const passport = require("passport");
+const Strategy = require("passport-facebook").Strategy;
+const mongoose = require("mongoose");
+const session = require("express-session");
+const expressSessionPassportCleanup = require("express-session-passport-cleanup");
+const MongoStore = require("connect-mongo");
+const mongoose_schema = mongoose.Schema;
+const Models_config = require("./config/model_config.js");
+const ON_DEATH = require("death");
 
-var server_config = require("./config/server_config.js");
-var HOST = server_config.host;
-var PORT = server_config.port;
-// var project_name = require(process.cwd()+'/config/server_config.js').project_name;
-var facebook_return =
+const server_config = require("./config/server_config.js");
+const HOST = server_config.host;
+const PORT = server_config.port;
+// const project_name = require(process.cwd()+'/config/server_config.js').project_name;
+const facebook_return =
   "http://" +
   HOST +
   "/" +
@@ -26,18 +26,16 @@ var facebook_return =
   "/login/facebook/return";
 
 // for parsing multipart/form-data
-var upload = multer();
+const upload = multer();
 
 // 連接字符串格式為mongodb://主機/資料庫名
-mongoose.createConnection("mongodb://localhost/gamilms_express", {
-  useMongoClient: true,
-});
-var Models = Models_config.setting(mongoose, mongoose_schema);
-var config_passport = require("./config/passport.js");
+mongoose.connect(server_config.mongodb_url);
+const Models = Models_config.setting(mongoose, mongoose_schema);
+const config_passport = require("./config/passport.js");
 config_passport(passport, Strategy, Models, facebook_return);
 
 // Create a new Express application.
-var app = express();
+const app = express();
 app.disable("x-powered-by");
 
 // Configure view engine to render EJS templates.
@@ -121,8 +119,8 @@ fs.ensureFile(process.cwd() + "/log/access.log", function (err, stat) {
           secret: "gamilmsCat",
           resave: false,
           saveUninitialized: true,
-          store: new MongoStore({
-            url: "mongodb://localhost/gamilms_express",
+          store: MongoStore.create({
+            mongoUrl: server_config.mongodb_url,
             ttl: 14 * 24 * 60 * 60 * 1000, // = 14 days. Default
           }),
         })

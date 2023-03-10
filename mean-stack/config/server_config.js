@@ -8,4 +8,6 @@ module.exports = {
     clientID: process.PASSPORT_CLIENT_ID || "Your Facebook ID",
     clientSecret: process.PASSPORT_CLIENT_SECRET || "Your Facebook Secret",
   },
+  mongodb_url:
+    process.MONGODB_URL || "mongodb://localhost:27017/gamilms_express",
 };
